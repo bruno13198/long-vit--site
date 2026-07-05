@@ -309,12 +309,27 @@ function ClassementTool() {
 }
 
 function HomeArticle() {
+  const dots = ["#E8467C", "#F5B324", "#F0662D", "#7CB342", "#E63946"];
+  const DotDivider = () => (
+    <div style={{ display: "flex", gap: 7, margin: "34px 0" }}>
+      {dots.map((c, i) => <span key={i} style={{ width: 8, height: 8, borderRadius: "50%", background: c }} />)}
+    </div>
+  );
   return (
     <div style={{ minHeight: "100vh", background: "#F7F4EC", fontFamily: "'Inter', sans-serif" }}>
       <style>{FONT_IMPORT}</style>
-      <div style={{ maxWidth: 680, margin: "0 auto", padding: "40px 24px 80px" }}>
 
-        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, letterSpacing: 1.5, color: "#1F8A6E", textTransform: "uppercase", marginBottom: 10 }}>
+      <div style={{ position: "relative", height: 220, overflow: "hidden" }}>
+        <img src="/images/hero-fruits.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.05), #F7F4EC)" }} />
+        <div style={{ position: "absolute", top: 16, left: 0, right: 0, display: "flex", justifyContent: "center", gap: 8 }}>
+          {dots.map((c, i) => <span key={i} style={{ width: 10, height: 10, borderRadius: "50%", background: c, border: "2px solid #fff" }} />)}
+        </div>
+      </div>
+
+      <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 24px 80px" }}>
+
+        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, letterSpacing: 1.5, color: "#1F8A6E", textTransform: "uppercase", margin: "28px 0 10px" }}>
           Bienvenue
         </div>
         <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: 34, fontWeight: 700, color: "#1B1F1D", margin: "0 0 18px", lineHeight: 1.2 }}>
@@ -324,7 +339,9 @@ function HomeArticle() {
           La plupart des gens arrivent ici en cherchant LE complément ou LE super-aliment qui va tout changer. C'est compréhensible — c'est aussi, le plus souvent, la mauvaise question. Les données les plus solides en santé et longévité ne pointent pas vers un ingrédient miracle, mais vers un petit ensemble de comportements de base qui se renforcent mutuellement.
         </p>
 
-        <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 21, fontWeight: 600, margin: "32px 0 12px" }}>
+        <DotDivider />
+
+        <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 21, fontWeight: 600, margin: "0 0 12px" }}>
           Les comportements s'additionnent, littéralement
         </h2>
         <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
@@ -334,7 +351,9 @@ function HomeArticle() {
           C'est pour ça que l'onglet <b>Comportements</b> du classement (activité physique, sommeil, tabac, liens sociaux...) regroupe presque tous les facteurs de grade A — les preuves les plus solides qui existent en épidémiologie humaine. Aucun complément ne s'en approche.
         </p>
 
-        <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 21, fontWeight: 600, margin: "32px 0 12px" }}>
+        <DotDivider />
+
+        <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 21, fontWeight: 600, margin: "0 0 12px" }}>
           Même côté alimentation, le battage médiatique ne suit pas les preuves
         </h2>
         <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
@@ -344,7 +363,13 @@ function HomeArticle() {
           Ce n'est pas que le curcuma ou le thé vert soient sans intérêt — on documente leurs effets en détail dans leurs fiches respectives. C'est juste qu'ils ne remplacent pas les fondamentaux, et que la hype médiatique n'est pas un bon indicateur de la solidité des preuves.
         </p>
 
-        <div style={{ background: "#FBF8F0", border: "1px solid #DDD5BE", borderRadius: 12, padding: "22px 24px", margin: "28px 0" }}>
+        <div style={{
+          borderRadius: 12, overflow: "hidden", margin: "28px 0", position: "relative", height: 160,
+        }}>
+          <img src="/images/veggies-stack.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        </div>
+
+        <div style={{ background: "#FBF8F0", border: "1px solid #DDD5BE", borderTop: "4px solid #F0662D", borderRadius: 12, padding: "22px 24px", margin: "28px 0" }}>
           <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 600, margin: "0 0 10px" }}>En pratique</h3>
           <p style={{ fontSize: 15, color: "#2A2A22", marginBottom: 0 }}>
             Avant d'optimiser un détail (quel complément, quel super-aliment), assure-toi d'abord des fondamentaux : sommeil suffisant, activité physique régulière, alimentation majoritairement composée d'aliments peu transformés, liens sociaux entretenus, pas de tabac. Le reste — curcuma, oméga-3, ail — vient ensuite affiner, pas remplacer.
@@ -365,7 +390,9 @@ export default function App() {
     <div>
       <nav style={{
         display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
-        padding: "16px 0", background: "#F7F4EC", borderBottom: "1px solid #DDD5BE",
+        padding: "16px 0", background: "#F7F4EC",
+        borderBottom: "3px solid transparent",
+        borderImage: "linear-gradient(90deg, #E8467C, #F5B324, #F0662D, #7CB342, #E63946) 1",
         position: "sticky", top: 0, zIndex: 10,
       }}>
         <style>{FONT_IMPORT}</style>
