@@ -176,7 +176,7 @@ function Row({ item, expanded, onToggle }) {
   );
 }
 
-export default function LongevityExplorer() {
+function ClassementTool() {
   const [tab, setTab] = useState("aliments");
   const [query, setQuery] = useState("");
   const [sortBy, setSortBy] = useState("grade");
@@ -304,6 +304,92 @@ export default function LongevityExplorer() {
           {data.length} entrées dans « {tab === "aliments" ? "Aliments" : "Comportements"} » — mis à jour manuellement à ce stade.
         </footer>
       </div>
+    </div>
+  );
+}
+
+function HomeArticle() {
+  return (
+    <div style={{ minHeight: "100vh", background: "#F7F4EC", fontFamily: "'Inter', sans-serif" }}>
+      <style>{FONT_IMPORT}</style>
+      <div style={{ maxWidth: 680, margin: "0 auto", padding: "40px 24px 80px" }}>
+
+        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, letterSpacing: 1.5, color: "#1F8A6E", textTransform: "uppercase", marginBottom: 10 }}>
+          Bienvenue
+        </div>
+        <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: 34, fontWeight: 700, color: "#1B1F1D", margin: "0 0 18px", lineHeight: 1.2 }}>
+          Ce n'est probablement pas une histoire de super-aliment
+        </h1>
+        <p style={{ fontSize: 16, color: "#2A2A22", marginBottom: 18 }}>
+          La plupart des gens arrivent ici en cherchant LE complément ou LE super-aliment qui va tout changer. C'est compréhensible — c'est aussi, le plus souvent, la mauvaise question. Les données les plus solides en santé et longévité ne pointent pas vers un ingrédient miracle, mais vers un petit ensemble de comportements de base qui se renforcent mutuellement.
+        </p>
+
+        <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 21, fontWeight: 600, margin: "32px 0 12px" }}>
+          Les comportements s'additionnent, littéralement
+        </h2>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
+          Bien dormir améliore la motivation à faire de l'exercice. L'exercice améliore à son tour la qualité du sommeil et régule l'appétit. Des liens sociaux solides augmentent la probabilité de tenir ses bonnes habitudes dans la durée. Ne pas fumer démultiplie les bénéfices de tout le reste, plutôt que de s'y ajouter simplement. Ce ne sont pas des facteurs isolés qu'on additionne — ce sont des leviers qui se renforcent les uns les autres.
+        </p>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
+          C'est pour ça que l'onglet <b>Comportements</b> du classement (activité physique, sommeil, tabac, liens sociaux...) regroupe presque tous les facteurs de grade A — les preuves les plus solides qui existent en épidémiologie humaine. Aucun complément ne s'en approche.
+        </p>
+
+        <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 21, fontWeight: 600, margin: "32px 0 12px" }}>
+          Même côté alimentation, le battage médiatique ne suit pas les preuves
+        </h2>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
+          Le curcuma, le thé vert ou les baies exotiques captent l'attention — mais si l'on classe les aliments selon la solidité des preuves humaines (cohortes prospectives, méta-analyses) plutôt que selon leur réputation, ce ne sont pas eux qui arrivent en tête. Les recommandations de référence en prévention (WCRF/AICR) misent sur des aliments bien plus ordinaires : céréales complètes, légumineuses, crucifères (brocoli, chou), légumes verts et huile d'olive. Ces organismes de référence déconseillent même explicitement l'usage de compléments à visée préventive.
+        </p>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
+          Ce n'est pas que le curcuma ou le thé vert soient sans intérêt — on documente leurs effets en détail dans leurs fiches respectives. C'est juste qu'ils ne remplacent pas les fondamentaux, et que la hype médiatique n'est pas un bon indicateur de la solidité des preuves.
+        </p>
+
+        <div style={{ background: "#FBF8F0", border: "1px solid #DDD5BE", borderRadius: 12, padding: "22px 24px", margin: "28px 0" }}>
+          <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 600, margin: "0 0 10px" }}>En pratique</h3>
+          <p style={{ fontSize: 15, color: "#2A2A22", marginBottom: 0 }}>
+            Avant d'optimiser un détail (quel complément, quel super-aliment), assure-toi d'abord des fondamentaux : sommeil suffisant, activité physique régulière, alimentation majoritairement composée d'aliments peu transformés, liens sociaux entretenus, pas de tabac. Le reste — curcuma, oméga-3, ail — vient ensuite affiner, pas remplacer.
+          </p>
+        </div>
+
+        <p style={{ fontSize: 15, color: "#6B6558" }}>
+          Explore l'onglet <b>Classement</b> pour voir, aliment par aliment et comportement par comportement, ce que disent réellement les preuves — avec leur niveau de solidité et leurs sources.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export default function App() {
+  const [page, setPage] = useState("accueil");
+  return (
+    <div>
+      <nav style={{
+        display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
+        padding: "16px 0", background: "#F7F4EC", borderBottom: "1px solid #DDD5BE",
+        position: "sticky", top: 0, zIndex: 10,
+      }}>
+        <style>{FONT_IMPORT}</style>
+        {[
+          { id: "accueil", label: "Accueil" },
+          { id: "classement", label: "Classement" },
+        ].map((p) => (
+          <button
+            key={p.id}
+            onClick={() => setPage(p.id)}
+            style={{
+              fontFamily: "'IBM Plex Mono', monospace", fontSize: 13,
+              padding: "8px 18px", borderRadius: 20,
+              border: `1.5px solid ${page === p.id ? "#1F8A6E" : "#DDD5BE"}`,
+              background: page === p.id ? "#1F8A6E" : "transparent",
+              color: page === p.id ? "#F7F4EC" : "#6B6558",
+              cursor: "pointer",
+            }}
+          >
+            {p.label}
+          </button>
+        ))}
+      </nav>
+      {page === "accueil" ? <HomeArticle /> : <ClassementTool />}
     </div>
   );
 }
