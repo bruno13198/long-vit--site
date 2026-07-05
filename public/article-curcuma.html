@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Le curcuma : que dit vraiment la science ? — Longévité</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+:root {
+  --ink: #1B1F1D;
+  --paper: #F7F4EC;
+  --paper-alt: #FBF8F0;
+  --accent: #1F8A6E;
+  --line: #DDD5BE;
+  --muted: #6B6558;
+  --grade-a: #1F8A5C;
+  --grade-b: #8AA83B;
+  --grade-c: #E2972E;
+  --grade-d: #D65C3D;
+  --grade-e: #B23A4E;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+
+.site-header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 28px 24px; max-width: 720px; margin: 0 auto;
+  border-bottom: 3px solid #E2972E;
+}
+.logo-mark { flex-shrink: 0; }
+.site-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; color: var(--ink); }
+.site-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--muted); letter-spacing: 0.5px; margin-top: 1px; }
+
+.hero { padding: 24px 24px 32px; margin: 0 -24px 0; border-bottom: 1px solid var(--line); position: relative; background: #FBF0DC; border-radius: 0 0 16px 16px; }
+.hero-illustration { position: absolute; right: 0; top: 0; opacity: 0.95; }
+.kicker { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 1.5px; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+h1.title { font-family: 'Fraunces', serif; font-size: 38px; font-weight: 700; margin: 0 0 14px; line-height: 1.15; max-width: 480px; }
+.lede { font-size: 16px; color: var(--muted); max-width: 480px; margin: 0 0 18px; }
+.global-grade { display: inline-flex; align-items: center; gap: 10px; background: var(--paper-alt); border: 1px solid var(--line); border-radius: 8px; padding: 10px 16px; }
+.stamp { width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 16px; transform: rotate(-6deg); background: var(--paper); }
+.stamp.a { border: 2px solid var(--grade-a); color: var(--grade-a); }
+.stamp.b { border: 2px solid var(--grade-b); color: var(--grade-b); }
+.stamp.c { border: 2px solid var(--grade-c); color: var(--grade-c); }
+.stamp.d { border: 2px solid var(--grade-d); color: var(--grade-d); }
+.stamp.e { border: 2px solid var(--grade-e); color: var(--grade-e); }
+.global-grade-text { font-size: 13px; color: var(--muted); }
+.global-grade-text b { color: var(--ink); font-weight: 600; }
+
+section.block { padding: 36px 0; border-bottom: 1px solid var(--line); }
+section.block:last-of-type { border-bottom: none; }
+h2.section-title { font-family: 'Fraunces', serif; font-size: 23px; font-weight: 600; margin: 0 0 6px; display: flex; align-items: center; gap: 12px; }
+.grade-chip { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; white-space: nowrap; }
+.grade-chip.a { background: #DCF0E4; color: var(--grade-a); }
+.grade-chip.b { background: #EEF2D6; color: var(--grade-b); }
+.grade-chip.c { background: #FBEDD2; color: var(--grade-c); }
+.grade-chip.d { background: #F8DCCF; color: var(--grade-d); }
+.grade-chip.e { background: #F5DCE0; color: var(--grade-e); }
+p { margin: 0 0 14px; font-size: 15.5px; }
+.sources { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); }
+.sources-label { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.sources a { display: block; font-size: 13px; color: var(--accent); text-decoration: none; margin-bottom: 4px; }
+.sources a:hover { text-decoration: underline; }
+
+table.recap { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 14px; }
+table.recap th { text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); padding: 8px 10px; border-bottom: 1px solid var(--line); }
+table.recap td { padding: 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+table.recap td:first-child { font-weight: 500; }
+
+.conclusion-box { background: var(--paper-alt); border: 1px solid var(--line); border-radius: 12px; padding: 24px 26px; margin-top: 8px; }
+.conclusion-box h3 { font-family: 'Fraunces', serif; font-size: 17px; margin: 0 0 10px; font-weight: 600; }
+.conclusion-box p:last-child { margin-bottom: 0; }
+.disclaimer { font-size: 12.5px; color: var(--muted); margin-top: 18px; font-style: italic; }
+
+.warning-box { background: #FBEDD2; border: 1px solid #E2972E; border-radius: 12px; padding: 20px 24px; margin: 8px 0 0; }
+.warning-box h3 { font-family: 'Fraunces', serif; font-size: 16px; margin: 0 0 8px; font-weight: 600; color: #8A5A0E; }
+.warning-box p:last-child { margin-bottom: 0; }
+
+ul.effects-list { margin: 0 0 14px; padding-left: 20px; }
+ul.effects-list li { margin-bottom: 8px; font-size: 15px; }
+ul.effects-list b { font-weight: 600; }
+
+footer.site-footer { text-align: center; font-size: 12px; color: var(--muted); padding: 30px 0 0; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <svg class="logo-mark" width="28" height="28" viewBox="0 0 40 40">
+    <ellipse cx="20" cy="22" rx="13" ry="10" fill="#F2A93B" stroke="#C9861F" stroke-width="1.5" transform="rotate(-10 20 22)"/>
+    <path d="M14 16 C12 10 15 5 20 3" stroke="#8AA83B" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle cx="20" cy="3" r="2.5" fill="#8AA83B"/>
+  </svg>
+  <div>
+    <div class="site-name">Longévité</div>
+    <div class="site-tag">CLASSEMENTS FONDÉS SUR LES PREUVES</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <svg class="hero-illustration" width="140" height="140" viewBox="0 0 140 140">
+      <ellipse cx="70" cy="80" rx="48" ry="34" fill="#F2A93B" stroke="#C9861F" stroke-width="1.5" transform="rotate(-8 70 80)"/>
+      <ellipse cx="45" cy="65" rx="26" ry="18" fill="#EEA02E" stroke="#C9861F" stroke-width="1.5" transform="rotate(15 45 65)"/>
+      <path d="M55 55 C48 40 52 22 45 10 M75 58 C80 42 76 25 84 14" stroke="#8AA83B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="45" cy="10" r="3" fill="#8AA83B"/>
+      <circle cx="84" cy="14" r="3" fill="#8AA83B"/>
+      <path d="M40 78 L100 78 M45 90 L95 90" stroke="#C9861F" stroke-width="1" opacity="0.4"/>
+    </svg>
+    <div class="kicker">Fiche aliment</div>
+    <h1 class="title">Le curcuma : que dit vraiment la science ?</h1>
+    <p class="lede">L'épice la plus étudiée après l'ail — et l'une des plus mal comprises, à cause d'un problème d'absorption que peu d'articles expliquent correctement.</p>
+    <div class="global-grade">
+      <div class="stamp b">B</div>
+      <div class="global-grade-text"><b>Grade global : preuve modérée</b><br/>Solide sur l'inflammation et l'arthrose, plus fragile ailleurs</div>
+    </div>
+  </div>
+
+  <section class="block">
+    <p>Le curcuma (<em>Curcuma longa</em>) doit sa réputation à la curcumine, le pigment qui lui donne sa couleur jaune-orangé. Des milliers d'études existent sur cette molécule, mais un détail change presque tout : la curcumine est très mal absorbée par l'organisme. Comprendre ce point est indispensable avant de lire n'importe quelle affirmation sur ses bienfaits — c'est pourquoi on commence par là.</p>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Le problème de la biodisponibilité</h2>
+    <p>Ingérée seule, la curcumine est très peu absorbée par l'intestin et rapidement éliminée par le foie — une grande partie ressort du corps sans avoir été utilisée. C'est pourquoi la plupart des compléments l'associent à la pipérine (extrait de poivre noir), qui ralentit son élimination.</p>
+    <p>Le chiffre "+2000 % de biodisponibilité" cité presque partout provient d'une étude fondatrice de 1998... réalisée sur <b>seulement 3 personnes</b>, avec des mesures qui ne détectaient même pas la curcumine seule dans le sang (d'où le calcul spectaculaire). Le principe — la pipérine améliore l'absorption — est confirmé par des études plus récentes, mais l'ampleur exacte de "+2000 %" est probablement moins solide que ne le laisse penser sa popularité.</p>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://cot.food.gov.uk/%20Turmeric%20and%20Curcumin%20Supplements%20-%20Toxicokinetics" target="_blank">Comité britannique de toxicologie — analyse critique de l'étude sur la pipérine ↗</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5664031/" target="_blank">Revue — curcumine et biodisponibilité (PMC) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Arthrose du genou <span class="grade-chip b">Grade B</span></h2>
+    <p>C'est l'effet le mieux démontré. Une méta-analyse de 15 essais randomisés (1621 participants) montre une réduction de la douleur et une amélioration de la fonction articulaire (scores WOMAC) comparable, dans plusieurs essais, à celle d'anti-inflammatoires classiques comme l'ibuprofène — avec moins d'effets digestifs. L'effet est reproduit par plusieurs méta-analyses indépendantes.</p>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8202067/" target="_blank">Méta-analyse — curcumine et arthrose, 15 essais (PMC) ↗</a>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/40615851/" target="_blank">Méta-analyse — curcumine et marqueurs inflammatoires dans l'arthrose (PubMed) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Polyarthrite rhumatoïde <span class="grade-chip c">Grade C</span></h2>
+    <p>Les résultats semblent impressionnants sur le papier — amélioration de plusieurs scores de la maladie — mais la méta-analyse elle-même qualifie la certitude de ces preuves de "très faible" selon les critères GRADE (l'échelle de référence en médecine). Seulement 6 essais et 244 participants au total : prometteur, mais très loin d'être établi.</p>
+    <div class="sources">
+      <div class="sources-label">Source</div>
+      <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12832973/" target="_blank">Méta-analyse — curcumine et polyarthrite rhumatoïde (PMC) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Glycémie (diabète de type 2) <span class="grade-chip b">Grade B</span></h2>
+    <p>Une méta-analyse de 18 essais (1382 patients) montre une réduction significative de la glycémie à jeun et de l'HbA1c, avec en plus une baisse de la CRP inflammatoire. Les résultats sont cohérents avec ce qu'on observe pour l'ail sur le même critère — plusieurs épices anti-inflammatoires semblent converger vers un effet métabolique modeste mais réel.</p>
+    <div class="sources">
+      <div class="sources-label">Source</div>
+      <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11644433/" target="_blank">Méta-analyse — curcumine et diabète de type 2 (PMC) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Marqueurs inflammatoires <span class="grade-chip b">Grade B</span></h2>
+    <p>Une revue de 54 méta-analyses publiées sur la curcumine (2023) constate une réduction de la CRP dans 7 analyses sur 10, de l'IL-6 dans 5 sur 8, et du TNF-α dans 6 sur 9 — un effet globalement cohérent mais pas unanime selon les marqueurs et les populations étudiées.</p>
+    <div class="sources">
+      <div class="sources-label">Source</div>
+      <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11174746/" target="_blank">Revue de 54 méta-analyses — curcumine et maladies inflammatoires métaboliques (PMC) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Cholestérol et lipides <span class="grade-chip c">Grade C</span></h2>
+    <p>Une méta-analyse dédiée montre un effet favorable sur le profil lipidique chez des personnes à risque cardiovasculaire, mais l'ampleur de l'effet reste modeste et hétérogène d'un essai à l'autre — comparable, dans l'esprit, à ce qu'on observe pour l'ail sur le même critère.</p>
+    <div class="sources">
+      <div class="sources-label">Source</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/29020971/" target="_blank">Méta-analyse — curcumine et lipides sanguins (PubMed) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Dépression <span class="grade-chip c">Grade C</span></h2>
+    <p>Plusieurs petites méta-analyses (6 essais chacune environ) rapportent un effet positif sur les symptômes dépressifs, avec une bonne tolérance. Mais les essais sont courts (4 à 8 semaines), de petite taille, et les auteurs eux-mêmes appellent à des essais plus robustes avant de tirer des conclusions fermes. Un signal encourageant, pas une preuve établie.</p>
+    <div class="sources">
+      <div class="sources-label">Source</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/28236605/" target="_blank">Méta-analyse — curcumine et dépression (PubMed) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Au-delà de la curcumine <span class="grade-chip d">Grade D</span></h2>
+    <p>Presque tous les articles sur le curcuma se concentrent uniquement sur la curcumine — qui ne représente pourtant que 2 à 5 % du rhizome. Le reste contient notamment une huile essentielle riche en turmérones (dont l'ar-turmérone), des composés totalement différents de la curcumine sur le plan chimique.</p>
+    <p>Ces turmérones montrent, en laboratoire et chez l'animal, des propriétés anti-inflammatoires et antiplaquettaires propres, indépendantes de la curcumine. Une découverte particulièrement intéressante : l'ar-turmérone stimulerait la prolifération de cellules souches neurales chez le rat — un mécanisme qui, si confirmé chez l'humain, ouvrirait une piste sur la régénération neuronale. Autre fait peu connu : les turmérones influenceraient elles-mêmes l'absorption intestinale de la curcumine, un mécanisme distinct de celui de la pipérine.</p>
+    <p>Le point de prudence habituel s'applique cependant : la quasi-totalité de ces données proviennent d'études en éprouvette ou chez l'animal. Quelques petits essais cliniques sur des formulations combinant curcumine et huile essentielle de curcuma rapportent des bénéfices supérieurs à la curcumine seule sur la douleur et l'inflammation, mais le nombre d'essais reste trop restreint pour en tirer une conclusion ferme.</p>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11397039/" target="_blank">Revue — bioactivités des composés de l'huile essentielle de curcuma (PMC) ↗</a>
+      <a href="https://www.nature.com/articles/s41598-017-00812-6" target="_blank">Étude — huile essentielle et curcumine combinées, modèle animal (Nature) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Effets secondaires et précautions</h2>
+    <div class="warning-box">
+      <h3>Point d'attention : risque hépatique avec les formes concentrées</h3>
+      <p>Le curcuma en tant qu'épice alimentaire est utilisé sans problème depuis des millénaires. Mais depuis quelques années, plusieurs cas documentés d'atteinte hépatique ont été rapportés avec des <b>compléments concentrés</b>, notamment ceux associés à la pipérine (qui augmente justement l'absorption). Le réseau américain de pharmacovigilance DILIN a recensé 10 cas de ce type, et l'agence australienne du médicament (TGA) a ouvert une alerte de sécurité après 18 signalements, dont un cas mortel. Les symptômes (jaunisse, fatigue, urines foncées) régressent généralement à l'arrêt du complément.</p>
+    </div>
+    <ul class="effects-list" style="margin-top:18px;">
+      <li><b>Digestifs :</b> à forte dose, reflux, nausées ou diarrhées sont possibles.</li>
+      <li><b>Risque de saignement :</b> comme l'ail, la curcumine a un effet antiplaquettaire modéré ; prudence en cas de traitement anticoagulant ou avant une chirurgie.</li>
+      <li><b>Qualité des produits :</b> des cas de contamination du curcuma en poudre par du chromate de plomb (utilisé pour intensifier la couleur) ont été documentés, un facteur confondant possible dans certains cas d'atteinte hépatique.</li>
+      <li><b>Alimentaire vs supplément :</b> le curcuma utilisé en cuisine, en quantités normales, ne pose pas de problème connu. Le risque concerne les compléments à haute dose, en particulier ceux combinés à la pipérine.</li>
+    </ul>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/medicines-containing-turmeric-or-curcumin-risk-liver-injury" target="_blank">TGA Australie — alerte sécurité curcuma et foie ↗</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12633785/" target="_blank">Étude de cas — atteinte hépatique liée au curcuma-pipérine (PMC) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Ce qu'il faut retenir</h2>
+    <table class="recap">
+      <tr><th>Effet</th><th>Grade</th><th>Fiabilité</th></tr>
+      <tr><td>Arthrose du genou</td><td><span class="grade-chip b">B</span></td><td>Solide, plusieurs méta-analyses convergentes</td></tr>
+      <tr><td>Glycémie (diabète type 2)</td><td><span class="grade-chip b">B</span></td><td>Solide sur essais de bonne taille</td></tr>
+      <tr><td>Marqueurs inflammatoires</td><td><span class="grade-chip b">B</span></td><td>Cohérent mais pas unanime selon le marqueur</td></tr>
+      <tr><td>Cholestérol / lipides</td><td><span class="grade-chip c">C</span></td><td>Réel mais modeste</td></tr>
+      <tr><td>Polyarthrite rhumatoïde</td><td><span class="grade-chip c">C</span></td><td>Prometteur, certitude "très faible" (GRADE)</td></tr>
+      <tr><td>Dépression</td><td><span class="grade-chip c">C</span></td><td>Signal positif, essais trop petits/courts</td></tr>
+      <tr><td>Turmérones (hors curcumine)</td><td>—</td><td>Prometteur en labo/animal, quasi aucun essai humain</td></tr>
+    </table>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Conclusion et recommandation</h2>
+    <div class="conclusion-box">
+      <h3>Un anti-inflammatoire naturel crédible, mais pas sans nuances</h3>
+      <p>Le curcuma a l'un des dossiers scientifiques les plus solides parmi les épices, en particulier pour l'arthrose et la glycémie. Mais son efficacité dépend fortement de la forme consommée — la curcumine seule, mal absorbée, agit peu comparée aux formulations optimisées pour l'absorption. Or ce sont justement ces formulations optimisées qui sont associées aux cas d'atteinte hépatique les plus documentés.</p>
+      <p><b>En pratique :</b> l'usage culinaire régulier du curcuma (avec du poivre noir et un corps gras pour l'absorption) reste une habitude sans risque connu pour la plupart des gens. Pour un usage en complément à visée thérapeutique (arthrose notamment), privilégier des produits standardisés, à dose raisonnable, en surveillant l'apparition de symptômes évocateurs d'un problème hépatique (fatigue inhabituelle, urines foncées, jaunisse) — et en informer son médecin, en particulier en cas de traitement anticoagulant ou de maladie du foie préexistante.</p>
+      <p class="disclaimer">Cet article a un but informatif et ne remplace pas un avis médical individualisé.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-footer">Article rédigé à partir de méta-analyses et revues systématiques (PubMed, TGA, comité britannique de toxicologie).</footer>
+
+</body>
+</html>
