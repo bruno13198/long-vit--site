@@ -23,7 +23,7 @@ const ALIMENTS = [
   { id: 7, nom: "Yaourt et aliments fermentés", categorie: "Laitiers", grade: "B", etudes: 22, resume: "Impact favorable sur le microbiote, mais les effets sur des issues de santé dures restent moins établis." },
   { id: 8, nom: "Thé vert", categorie: "Boissons", grade: "B", etudes: 27, resume: "Catéchines associées à une réduction modeste du risque cardiométabolique, effet dose difficile à isoler." },
   { id: 9, nom: "Curcuma / curcumine", categorie: "Épices", grade: "B", etudes: 31, resume: "Propriétés anti-inflammatoires démontrées in vitro ; biodisponibilité orale faible limite l'effet clinique." },
-  { id: 10, nom: "Ail", categorie: "Légumes", grade: "B", etudes: 18, resume: "Effets sur la tension artérielle observés, mais tailles d'effet modestes et études souvent courtes." },
+  { id: 10, nom: "Ail", categorie: "Légumes", grade: "B", etudes: 18, resume: "Effets sur la tension artérielle observés, mais tailles d'effet modestes et études souvent courtes.", articleUrl: "/article-ail.html" },
   { id: 11, nom: "Chocolat noir (>70%)", categorie: "Autres", grade: "C", etudes: 14, resume: "Flavanols intéressants, mais les essais sont petits et l'effet se dilue avec le sucre et les graisses ajoutées." },
   { id: 12, nom: "Super-aliments exotiques (spiruline, baies de goji)", categorie: "Autres", grade: "D", etudes: 6, resume: "Antioxydants présents, mais aucune preuve clinique solide d'un bénéfice supérieur aux fruits et légumes courants." },
   { id: 13, nom: "Vin rouge (consommation modérée)", categorie: "Boissons", grade: "E", etudes: 20, resume: "Ancienne hypothèse cardioprotectrice invalidée par des études de randomisation mendélienne : aucun effet causal protecteur identifié." },
@@ -139,6 +139,21 @@ function Row({ item, expanded, onToggle }) {
           <div style={{ marginTop: 10, fontSize: 12.5, fontFamily: "'Inter', sans-serif", color: info.color, fontWeight: 600 }}>
             {info.label} — {info.desc}
           </div>
+          {item.articleUrl && (
+            <a
+              href={item.articleUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                display: "inline-block", marginTop: 12, fontSize: 13, fontWeight: 600,
+                color: "#fff", background: "#1F8A6E", padding: "7px 14px", borderRadius: 6,
+                textDecoration: "none", fontFamily: "'Inter', sans-serif",
+              }}
+            >
+              Lire l'article complet ↗
+            </a>
+          )}
           {item.sources && item.sources.length > 0 && (
             <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 4 }}>
               {item.sources.map((s, i) => (
