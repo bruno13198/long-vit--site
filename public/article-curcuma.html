@@ -9,9 +9,9 @@
 
 :root {
   --ink: #1B1F1D;
-  --paper: #F7F4EC;
+  --paper: #F7F5EE;
   --paper-alt: #FBF8F0;
-  --accent: #1F8A6E;
+  --accent: #2F4A34;
   --line: #DDD5BE;
   --muted: #6B6558;
   --grade-a: #1F8A5C;
@@ -33,7 +33,7 @@ body {
 .site-header {
   display: flex; align-items: center; gap: 10px;
   padding: 28px 24px; max-width: 720px; margin: 0 auto;
-  border-bottom: 3px solid transparent; border-image: linear-gradient(90deg, #E8467C, #F5B324, #F0662D, #7CB342, #E63946) 1;
+  border-bottom: 1px solid var(--line);
 }
 .logo-mark { flex-shrink: 0; }
 .site-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; color: var(--ink); }
@@ -98,9 +98,8 @@ footer.site-footer { text-align: center; font-size: 12px; color: var(--muted); p
 
 <header class="site-header">
   <svg class="logo-mark" width="28" height="28" viewBox="0 0 40 40">
-    <ellipse cx="20" cy="22" rx="13" ry="10" fill="#F2A93B" stroke="#C9861F" stroke-width="1.5" transform="rotate(-10 20 22)"/>
-    <path d="M14 16 C12 10 15 5 20 3" stroke="#8AA83B" stroke-width="2" fill="none" stroke-linecap="round"/>
-    <circle cx="20" cy="3" r="2.5" fill="#8AA83B"/>
+    <circle cx="20" cy="20" r="18" fill="none" stroke="#2F4A34" stroke-width="2"/>
+    <path d="M20 30 L20 12 M20 12 C15 12 13 8 13 8 C13 8 15 14 20 15 M20 12 C25 12 27 8 27 8 C27 8 25 14 20 15" stroke="#2F4A34" stroke-width="1.5" fill="none"/>
   </svg>
   <div>
     <div class="site-name">Longévité</div>
@@ -131,7 +130,7 @@ footer.site-footer { text-align: center; font-size: 12px; color: var(--muted); p
   <section class="block">
     <p>Le curcuma (<em>Curcuma longa</em>) doit sa réputation à la curcumine, le pigment qui lui donne sa couleur jaune-orangé. Des milliers d'études existent sur cette molécule, mais un détail change presque tout : la curcumine est très mal absorbée par l'organisme. Comprendre ce point est indispensable avant de lire n'importe quelle affirmation sur ses bienfaits — c'est pourquoi on commence par là.</p>
     <div class="photo-banner"><img src="/images/veggies-stack.jpg" alt="" /></div>
-    <div class="dots-row"><span style="background:#E8467C"></span><span style="background:#F5B324"></span><span style="background:#F0662D"></span><span style="background:#7CB342"></span><span style="background:#E63946"></span></div>
+    <div class="dots-row"><span style="background:#2F4A34"></span><span style="background:#7C9473"></span><span style="background:#A8B89C"></span><span style="background:#5C7A5A"></span><span style="background:#3F5E44"></span></div>
   </section>
 
   <section class="block">

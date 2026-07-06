@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { Search, ChevronDown, ChevronUp, Users, Beaker, Apple, Activity, Leaf, Moon, FlaskConical, Heart, FlaskRound, RefreshCw, ShieldCheck, ArrowRight } from "lucide-react";
+import { Search, ChevronDown, ChevronUp, Users, Beaker, Apple, Activity, Leaf, Moon, FlaskConical, Heart, FlaskRound, RefreshCw, ShieldCheck, ArrowRight, Microscope, Salad, PersonStanding, BedDouble } from "lucide-react";
 
 const FONT_IMPORT = `
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
@@ -176,8 +176,8 @@ function Row({ item, expanded, onToggle }) {
   );
 }
 
-function ClassementTool() {
-  const [tab, setTab] = useState("aliments");
+function ClassementTool({ initialTab = "aliments" }) {
+  const [tab, setTab] = useState(initialTab);
   const [query, setQuery] = useState("");
   const [sortBy, setSortBy] = useState("grade");
   const [expandedId, setExpandedId] = useState(null);
@@ -333,20 +333,18 @@ function TreeLogo({ size = 34 }) {
   );
 }
 
-function HomeArticle() {
+function HomeArticle({ onNavigate }) {
   const categories = [
-    { icon: Apple, label: "Alimentation", sub: "Nourrir son corps avec intelligence" },
-    { icon: Activity, label: "Activité physique", sub: "Bouger chaque jour pour durer" },
-    { icon: Leaf, label: "Nature", sub: "Se reconnecter à l'essentiel" },
-    { icon: Moon, label: "Sommeil", sub: "Le pilier silencieux de la santé" },
-    { icon: FlaskConical, label: "Science", sub: "Des preuves, pas des promesses" },
-    { icon: Heart, label: "Équilibre", sub: "Esprit, émotions et relations" },
+    { icon: Microscope, label: "Science" },
+    { icon: Salad, label: "Alimentation" },
+    { icon: PersonStanding, label: "Sport" },
+    { icon: BedDouble, label: "Sommeil" },
   ];
   const articles = [
     { img: "/images/veggies-fresh.jpg", title: "L'ail : que dit vraiment la science ?", url: "/article-ail.html" },
     { img: "/images/veggies-stack.jpg", title: "Le curcuma au-delà de la curcumine", url: "/article-curcuma.html" },
-    { img: "/images/market-crates.jpg", title: "Le classement complet des aliments", url: "#classement" },
-    { img: "/images/hero-fruits.jpg", title: "Pourquoi les comportements comptent plus", url: "#philosophie" },
+    { img: "/images/market-crates.jpg", title: "Le classement complet des aliments", url: "aliments" },
+    { img: "/images/hero-fruits.jpg", title: "Pourquoi les comportements comptent plus", url: "philosophie" },
   ];
   const trust = [
     { icon: FlaskRound, label: "Recherches scientifiques" },
@@ -359,44 +357,38 @@ function HomeArticle() {
     <div style={{ minHeight: "100vh", background: CREAM, fontFamily: "'Inter', sans-serif" }}>
       <style>{FONT_IMPORT}</style>
 
-      <div style={{ position: "relative", height: 460, overflow: "hidden", display: "flex" }}>
-        <div style={{ flex: 1, overflow: "hidden" }}>
-          <img src="/images/market-crates.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-        </div>
-        <div style={{ flex: 1, overflow: "hidden" }}>
-          <img src="/images/trail-runner.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-        </div>
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(20,30,20,0.35) 0%, rgba(20,30,20,0.55) 40%, rgba(20,30,20,0.35) 60%, rgba(20,30,20,0.15) 100%)" }} />
+      <div style={{ position: "relative", height: 560, overflow: "hidden" }}>
+        <img src="/images/forest-stream.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(10,20,10,0.55) 0%, rgba(10,20,10,0.25) 45%, rgba(10,20,10,0.05) 70%)" }} />
         <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center" }}>
-          <div style={{ maxWidth: 720, margin: "0 auto", width: "100%", padding: "0 24px" }}>
-            <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: 42, fontWeight: 700, color: "#fff", margin: "0 0 6px", lineHeight: 1.15 }}>
-              La longévité<br />est un art de vivre.
+          <div style={{ maxWidth: 900, margin: "0 auto", width: "100%", padding: "0 24px" }}>
+            <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: 44, fontWeight: 700, color: "#fff", margin: "0 0 6px", lineHeight: 1.15 }}>
+              La longévité<br />au quotidien.
             </h1>
             <p style={{ color: "#F2F0E6", fontSize: 15.5, margin: "14px 0 22px", maxWidth: 380 }}>
-              Des connaissances scientifiquement fondées pour vivre mieux et plus longtemps.
+              Des choix éclairés aujourd'hui, pour une vie plus saine demain.
             </p>
             <button style={{
               fontFamily: "'IBM Plex Mono', monospace", fontSize: 12.5, letterSpacing: 0.5,
               background: FOREST, color: "#fff", border: "none", borderRadius: 24,
               padding: "12px 22px", cursor: "pointer", textTransform: "uppercase",
             }}>
-              Découvrir les clés <Leaf size={13} style={{ verticalAlign: -2, marginLeft: 4 }} />
+              Explorer le site <Leaf size={13} style={{ verticalAlign: -2, marginLeft: 4 }} />
             </button>
           </div>
         </div>
       </div>
 
-      <div style={{ maxWidth: 900, margin: "-30px auto 0", background: CREAM, borderRadius: "16px 16px 0 0", position: "relative", padding: "34px 24px 10px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px 12px", maxWidth: 700, margin: "0 auto" }}>
+      <div style={{ maxWidth: 900, margin: "-40px auto 0", background: CREAM, borderRadius: 16, position: "relative", padding: "26px 24px", boxShadow: "0 8px 30px rgba(0,0,0,0.08)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
           {categories.map((c, i) => (
-            <div key={i} style={{ textAlign: "center" }}>
-              <div style={{ width: 52, height: 52, borderRadius: "50%", border: `1.5px solid ${SAGE}`, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 8px" }}>
-                <c.icon size={20} color={FOREST} />
+            <div key={i} style={{ textAlign: "center", borderRight: i < categories.length - 1 ? "1px solid #E4E0D3" : "none" }}>
+              <div style={{ width: 56, height: 56, borderRadius: "50%", border: `1.5px solid ${FOREST}`, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 10px" }}>
+                <c.icon size={22} color={FOREST} />
               </div>
-              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, fontWeight: 600, color: "#1B1F1D", textTransform: "uppercase", letterSpacing: 0.3 }}>
+              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11.5, fontWeight: 700, color: "#1B1F1D", textTransform: "uppercase", letterSpacing: 0.3 }}>
                 {c.label}
               </div>
-              <div style={{ fontSize: 11, color: "#6B6558", marginTop: 2 }}>{c.sub}</div>
             </div>
           ))}
         </div>
@@ -404,22 +396,34 @@ function HomeArticle() {
 
       <div style={{ maxWidth: 900, margin: "0 auto", padding: "36px 24px 10px" }}>
         <div style={{ textAlign: "center", fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, letterSpacing: 1, color: FOREST, marginBottom: 18 }}>
-          <Leaf size={13} style={{ verticalAlign: -2, marginRight: 6 }} />ARTICLES &amp; OUTILS
+          <Leaf size={13} style={{ verticalAlign: -2, marginRight: 6 }} />RESSOURCES RÉCENTES
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))", gap: 14 }}>
-          {articles.map((a, i) => (
-            <a key={i} href={a.url} target={a.url.startsWith("/") ? "_blank" : undefined} rel="noreferrer" style={{ textDecoration: "none", color: "inherit", border: "1px solid #DDD5BE", borderRadius: 10, overflow: "hidden", background: "#fff" }}>
-              <div style={{ height: 90, overflow: "hidden" }}>
-                <img src={a.img} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              </div>
-              <div style={{ padding: "10px 12px" }}>
-                <div style={{ fontSize: 13, fontWeight: 600, color: "#1B1F1D", lineHeight: 1.3, marginBottom: 6 }}>{a.title}</div>
-                <div style={{ fontSize: 11, color: FOREST, fontFamily: "'IBM Plex Mono', monospace", display: "flex", alignItems: "center", gap: 3 }}>
-                  Lire l'article <ArrowRight size={11} />
+          {articles.map((a, i) => {
+            const isExternal = a.url.startsWith("/");
+            const isAnchor = a.url === "philosophie";
+            const CardInner = (
+              <>
+                <div style={{ height: 90, overflow: "hidden" }}>
+                  <img src={a.img} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                 </div>
-              </div>
-            </a>
-          ))}
+                <div style={{ padding: "10px 12px" }}>
+                  <div style={{ fontSize: 13, fontWeight: 600, color: "#1B1F1D", lineHeight: 1.3, marginBottom: 6 }}>{a.title}</div>
+                  <div style={{ fontSize: 11, color: FOREST, fontFamily: "'IBM Plex Mono', monospace", display: "flex", alignItems: "center", gap: 3 }}>
+                    Lire l'article <ArrowRight size={11} />
+                  </div>
+                </div>
+              </>
+            );
+            const cardStyle = { textDecoration: "none", color: "inherit", border: "1px solid #DDD5BE", borderRadius: 10, overflow: "hidden", background: "#fff", cursor: "pointer", display: "block", width: "100%", textAlign: "left", padding: 0 };
+            if (isExternal) {
+              return <a key={i} href={a.url} target="_blank" rel="noreferrer" style={cardStyle}>{CardInner}</a>;
+            }
+            if (isAnchor) {
+              return <a key={i} href="#philosophie" style={cardStyle}>{CardInner}</a>;
+            }
+            return <button key={i} onClick={() => onNavigate && onNavigate(a.url)} style={cardStyle}>{CardInner}</button>;
+          })}
         </div>
       </div>
 
@@ -464,6 +468,70 @@ function HomeArticle() {
   );
 }
 
+function EtudesScientifiques() {
+  const articles = [
+    { img: "/images/veggies-fresh.jpg", title: "L'ail : que dit vraiment la science ?", desc: "Tension artérielle, glycémie, cancers digestifs, rhume, antimicrobien — effet par effet, sources à l'appui.", url: "/article-ail.html" },
+    { img: "/images/veggies-stack.jpg", title: "Le curcuma au-delà de la curcumine", desc: "Arthrose, glycémie, turmérones, et un point d'attention sur le foie que peu d'articles mentionnent.", url: "/article-curcuma.html" },
+  ];
+  return (
+    <div style={{ minHeight: "100vh", background: CREAM, fontFamily: "'Inter', sans-serif" }}>
+      <style>{FONT_IMPORT}</style>
+      <div style={{ maxWidth: 780, margin: "0 auto", padding: "48px 24px 80px" }}>
+        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, letterSpacing: 1.5, color: FOREST, textTransform: "uppercase", marginBottom: 10 }}>
+          Études scientifiques
+        </div>
+        <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: 32, fontWeight: 700, color: "#1B1F1D", margin: "0 0 14px" }}>
+          Les dossiers complets, aliment par aliment
+        </h1>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 30, maxWidth: 560 }}>
+          Chaque dossier passe en revue les méta-analyses et revues systématiques disponibles, effet par effet, avec les sources vérifiées. De nouveaux dossiers s'ajoutent régulièrement.
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 18 }}>
+          {articles.map((a, i) => (
+            <a key={i} href={a.url} target="_blank" rel="noreferrer" style={{ textDecoration: "none", color: "inherit", border: "1px solid #DDD5BE", borderRadius: 12, overflow: "hidden", background: "#fff" }}>
+              <div style={{ height: 130, overflow: "hidden" }}>
+                <img src={a.img} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              </div>
+              <div style={{ padding: "16px 18px" }}>
+                <div style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 600, color: "#1B1F1D", marginBottom: 8 }}>{a.title}</div>
+                <div style={{ fontSize: 13, color: "#6B6558", marginBottom: 12, lineHeight: 1.5 }}>{a.desc}</div>
+                <div style={{ fontSize: 12, color: FOREST, fontFamily: "'IBM Plex Mono', monospace", display: "flex", alignItems: "center", gap: 3 }}>
+                  Lire le dossier <ArrowRight size={12} />
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PageAVenir({ kicker, title, description, ideas }) {
+  return (
+    <div style={{ minHeight: "100vh", background: CREAM, fontFamily: "'Inter', sans-serif" }}>
+      <style>{FONT_IMPORT}</style>
+      <div style={{ maxWidth: 680, margin: "0 auto", padding: "48px 24px 80px" }}>
+        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, letterSpacing: 1.5, color: FOREST, textTransform: "uppercase", marginBottom: 10 }}>
+          {kicker}
+        </div>
+        <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: 30, fontWeight: 700, color: "#1B1F1D", margin: "0 0 14px" }}>
+          {title}
+        </h1>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 26, maxWidth: 520 }}>
+          {description}
+        </p>
+        <div style={{ background: "#fff", border: "1px solid #DDD5BE", borderLeft: `4px solid ${FOREST}`, borderRadius: 10, padding: "20px 24px" }}>
+          <div style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: 15, marginBottom: 10 }}>Au programme, bientôt :</div>
+          <ul style={{ margin: 0, paddingLeft: 20, fontSize: 14, color: "#2A2A22", lineHeight: 1.9 }}>
+            {ideas.map((idea, i) => <li key={i}>{idea}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const [page, setPage] = useState("accueil");
   return (
@@ -481,20 +549,23 @@ export default function App() {
             <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 8.5, color: "#6B6558", letterSpacing: 0.5 }}>VIVRE MIEUX, PLUS LONGTEMPS</div>
           </div>
         </div>
-        <div style={{ display: "flex", gap: 22 }}>
+        <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
           {[
             { id: "accueil", label: "Accueil" },
-            { id: "classement", label: "Classement" },
+            { id: "aliments", label: "Aliments" },
+            { id: "outils", label: "Outils" },
+            { id: "etudes", label: "Études scientifiques" },
+            { id: "complements", label: "Compléments alimentaires" },
           ].map((p) => (
             <button
               key={p.id}
               onClick={() => setPage(p.id)}
               style={{
-                fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, letterSpacing: 0.5,
+                fontFamily: "'IBM Plex Mono', monospace", fontSize: 11.5, letterSpacing: 0.3,
                 background: "none", border: "none", cursor: "pointer",
                 color: page === p.id ? FOREST : "#6B6558",
                 borderBottom: page === p.id ? `2px solid ${FOREST}` : "2px solid transparent",
-                paddingBottom: 4, textTransform: "uppercase",
+                paddingBottom: 4, textTransform: "uppercase", whiteSpace: "nowrap",
               }}
             >
               {p.label}
@@ -502,7 +573,25 @@ export default function App() {
           ))}
         </div>
       </nav>
-      {page === "accueil" ? <HomeArticle /> : <ClassementTool />}
+      {page === "accueil" && <HomeArticle onNavigate={setPage} />}
+      {page === "aliments" && <ClassementTool initialTab="aliments" />}
+      {page === "outils" && (
+        <PageAVenir
+          kicker="Outils"
+          title="Les outils interactifs arrivent bientôt"
+          description="Quiz de compléments, comparateur aliment contre aliment, calculateur d'habitudes — ces outils sont en préparation. En attendant, le classement complet reste consultable dès maintenant."
+          ideas={["Quiz : quel complément pour quel objectif", "Comparateur côte-à-côte entre deux aliments", "Checklist quotidienne des comportements longévité"]}
+        />
+      )}
+      {page === "etudes" && <EtudesScientifiques />}
+      {page === "complements" && (
+        <PageAVenir
+          kicker="Compléments alimentaires"
+          title="Une base dédiée aux compléments arrive bientôt"
+          description="Contrairement aux aliments entiers, les compléments isolés (gélules, poudres, extraits) méritent leur propre classement — dosages, formes, interactions. Cette section est en cours de construction."
+          ideas={["Classement des compléments par niveau de preuve", "Fiches dosage et forme (gélule, poudre, liquide)", "Alertes sur les interactions médicamenteuses connues"]}
+        />
+      )}
     </div>
   );
 }
