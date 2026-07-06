@@ -359,9 +359,14 @@ function HomeArticle() {
     <div style={{ minHeight: "100vh", background: CREAM, fontFamily: "'Inter', sans-serif" }}>
       <style>{FONT_IMPORT}</style>
 
-      <div style={{ position: "relative", height: 460, overflow: "hidden" }}>
-        <img src="/images/hero-fruits.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(100deg, rgba(20,30,20,0.55) 0%, rgba(20,30,20,0.15) 55%, rgba(20,30,20,0.05) 100%)" }} />
+      <div style={{ position: "relative", height: 460, overflow: "hidden", display: "flex" }}>
+        <div style={{ flex: 1, overflow: "hidden" }}>
+          <img src="/images/market-crates.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        </div>
+        <div style={{ flex: 1, overflow: "hidden" }}>
+          <img src="/images/trail-runner.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        </div>
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(20,30,20,0.35) 0%, rgba(20,30,20,0.55) 40%, rgba(20,30,20,0.35) 60%, rgba(20,30,20,0.15) 100%)" }} />
         <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center" }}>
           <div style={{ maxWidth: 720, margin: "0 auto", width: "100%", padding: "0 24px" }}>
             <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: 42, fontWeight: 700, color: "#fff", margin: "0 0 6px", lineHeight: 1.15 }}>
