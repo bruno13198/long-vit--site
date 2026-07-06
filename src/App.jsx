@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { Search, ChevronDown, ChevronUp, Users, Beaker } from "lucide-react";
+import { Search, ChevronDown, ChevronUp, Users, Beaker, Apple, Activity, Leaf, Moon, FlaskConical, Heart, FlaskRound, RefreshCw, ShieldCheck, ArrowRight } from "lucide-react";
 
 const FONT_IMPORT = `
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
@@ -217,6 +217,15 @@ function ClassementTool() {
           </p>
         </header>
 
+        <div style={{ borderRadius: 12, overflow: "hidden", margin: "0 0 28px", height: 140 }}>
+          <img src="/images/market-crates.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        </div>
+        <div style={{ display: "flex", gap: 7, marginBottom: 28 }}>
+          {["#E8467C", "#F5B324", "#F0662D", "#7CB342", "#E63946"].map((c) => (
+            <span key={c} style={{ width: 8, height: 8, borderRadius: "50%", background: c }} />
+          ))}
+        </div>
+
         {/* Tabs */}
         <div style={{ display: "flex", gap: 8, marginBottom: 22 }}>
           {[
@@ -308,77 +317,143 @@ function ClassementTool() {
   );
 }
 
-function HomeArticle() {
-  const dots = ["#E8467C", "#F5B324", "#F0662D", "#7CB342", "#E63946"];
-  const DotDivider = () => (
-    <div style={{ display: "flex", gap: 7, margin: "34px 0" }}>
-      {dots.map((c, i) => <span key={i} style={{ width: 8, height: 8, borderRadius: "50%", background: c }} />)}
-    </div>
-  );
+const FOREST = "#2F4A34";
+const FOREST_DARK = "#22362A";
+const SAGE = "#7C9473";
+const CREAM = "#F7F5EE";
+
+function TreeLogo({ size = 34 }) {
   return (
-    <div style={{ minHeight: "100vh", background: "#F7F4EC", fontFamily: "'Inter', sans-serif" }}>
+    <svg width={size} height={size} viewBox="0 0 40 40">
+      <circle cx="20" cy="20" r="19" fill="#FFFFFF" stroke={FOREST} strokeWidth="1.5" />
+      <path d="M20 30 L20 20" stroke={FOREST} strokeWidth="1.5" />
+      <path d="M20 22 C14 22 12 17 14 13 C16 15 18 15 20 13 C22 15 24 15 26 13 C28 17 26 22 20 22 Z" fill={SAGE} stroke={FOREST} strokeWidth="1" />
+      <circle cx="20" cy="14" r="2.4" fill={FOREST} />
+    </svg>
+  );
+}
+
+function HomeArticle() {
+  const categories = [
+    { icon: Apple, label: "Alimentation", sub: "Nourrir son corps avec intelligence" },
+    { icon: Activity, label: "Activité physique", sub: "Bouger chaque jour pour durer" },
+    { icon: Leaf, label: "Nature", sub: "Se reconnecter à l'essentiel" },
+    { icon: Moon, label: "Sommeil", sub: "Le pilier silencieux de la santé" },
+    { icon: FlaskConical, label: "Science", sub: "Des preuves, pas des promesses" },
+    { icon: Heart, label: "Équilibre", sub: "Esprit, émotions et relations" },
+  ];
+  const articles = [
+    { img: "/images/veggies-fresh.jpg", title: "L'ail : que dit vraiment la science ?", url: "/article-ail.html" },
+    { img: "/images/veggies-stack.jpg", title: "Le curcuma au-delà de la curcumine", url: "/article-curcuma.html" },
+    { img: "/images/market-crates.jpg", title: "Le classement complet des aliments", url: "#classement" },
+    { img: "/images/hero-fruits.jpg", title: "Pourquoi les comportements comptent plus", url: "#philosophie" },
+  ];
+  const trust = [
+    { icon: FlaskRound, label: "Recherches scientifiques" },
+    { icon: RefreshCw, label: "Mises à jour régulières" },
+    { icon: ShieldCheck, label: "Sources fiables" },
+    { icon: Leaf, label: "Indépendant et transparent" },
+  ];
+
+  return (
+    <div style={{ minHeight: "100vh", background: CREAM, fontFamily: "'Inter', sans-serif" }}>
       <style>{FONT_IMPORT}</style>
 
-      <div style={{ position: "relative", height: 220, overflow: "hidden" }}>
-        <img src="/images/hero-fruits.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.05), #F7F4EC)" }} />
-        <div style={{ position: "absolute", top: 16, left: 0, right: 0, display: "flex", justifyContent: "center", gap: 8 }}>
-          {dots.map((c, i) => <span key={i} style={{ width: 10, height: 10, borderRadius: "50%", background: c, border: "2px solid #fff" }} />)}
+      <div style={{ position: "relative", height: 460, overflow: "hidden" }}>
+        <img src="/images/hero-fruits.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(100deg, rgba(20,30,20,0.55) 0%, rgba(20,30,20,0.15) 55%, rgba(20,30,20,0.05) 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center" }}>
+          <div style={{ maxWidth: 720, margin: "0 auto", width: "100%", padding: "0 24px" }}>
+            <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: 42, fontWeight: 700, color: "#fff", margin: "0 0 6px", lineHeight: 1.15 }}>
+              La longévité<br />est un art de vivre.
+            </h1>
+            <p style={{ color: "#F2F0E6", fontSize: 15.5, margin: "14px 0 22px", maxWidth: 380 }}>
+              Des connaissances scientifiquement fondées pour vivre mieux et plus longtemps.
+            </p>
+            <button style={{
+              fontFamily: "'IBM Plex Mono', monospace", fontSize: 12.5, letterSpacing: 0.5,
+              background: FOREST, color: "#fff", border: "none", borderRadius: 24,
+              padding: "12px 22px", cursor: "pointer", textTransform: "uppercase",
+            }}>
+              Découvrir les clés <Leaf size={13} style={{ verticalAlign: -2, marginLeft: 4 }} />
+            </button>
+          </div>
         </div>
       </div>
 
-      <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 24px 80px" }}>
-
-        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, letterSpacing: 1.5, color: "#1F8A6E", textTransform: "uppercase", margin: "28px 0 10px" }}>
-          Bienvenue
+      <div style={{ maxWidth: 900, margin: "-30px auto 0", background: CREAM, borderRadius: "16px 16px 0 0", position: "relative", padding: "34px 24px 10px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px 12px", maxWidth: 700, margin: "0 auto" }}>
+          {categories.map((c, i) => (
+            <div key={i} style={{ textAlign: "center" }}>
+              <div style={{ width: 52, height: 52, borderRadius: "50%", border: `1.5px solid ${SAGE}`, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 8px" }}>
+                <c.icon size={20} color={FOREST} />
+              </div>
+              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, fontWeight: 600, color: "#1B1F1D", textTransform: "uppercase", letterSpacing: 0.3 }}>
+                {c.label}
+              </div>
+              <div style={{ fontSize: 11, color: "#6B6558", marginTop: 2 }}>{c.sub}</div>
+            </div>
+          ))}
         </div>
-        <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: 34, fontWeight: 700, color: "#1B1F1D", margin: "0 0 18px", lineHeight: 1.2 }}>
+      </div>
+
+      <div style={{ maxWidth: 900, margin: "0 auto", padding: "36px 24px 10px" }}>
+        <div style={{ textAlign: "center", fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, letterSpacing: 1, color: FOREST, marginBottom: 18 }}>
+          <Leaf size={13} style={{ verticalAlign: -2, marginRight: 6 }} />ARTICLES &amp; OUTILS
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))", gap: 14 }}>
+          {articles.map((a, i) => (
+            <a key={i} href={a.url} target={a.url.startsWith("/") ? "_blank" : undefined} rel="noreferrer" style={{ textDecoration: "none", color: "inherit", border: "1px solid #DDD5BE", borderRadius: 10, overflow: "hidden", background: "#fff" }}>
+              <div style={{ height: 90, overflow: "hidden" }}>
+                <img src={a.img} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              </div>
+              <div style={{ padding: "10px 12px" }}>
+                <div style={{ fontSize: 13, fontWeight: 600, color: "#1B1F1D", lineHeight: 1.3, marginBottom: 6 }}>{a.title}</div>
+                <div style={{ fontSize: 11, color: FOREST, fontFamily: "'IBM Plex Mono', monospace", display: "flex", alignItems: "center", gap: 3 }}>
+                  Lire l'article <ArrowRight size={11} />
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div id="philosophie" style={{ maxWidth: 680, margin: "0 auto", padding: "40px 24px 20px" }}>
+        <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 26, fontWeight: 700, color: "#1B1F1D", margin: "0 0 14px" }}>
           Ce n'est probablement pas une histoire de super-aliment
-        </h1>
-        <p style={{ fontSize: 16, color: "#2A2A22", marginBottom: 18 }}>
+        </h2>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
           La plupart des gens arrivent ici en cherchant LE complément ou LE super-aliment qui va tout changer. C'est compréhensible — c'est aussi, le plus souvent, la mauvaise question. Les données les plus solides en santé et longévité ne pointent pas vers un ingrédient miracle, mais vers un petit ensemble de comportements de base qui se renforcent mutuellement.
         </p>
-
-        <DotDivider />
-
-        <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 21, fontWeight: 600, margin: "0 0 12px" }}>
-          Les comportements s'additionnent, littéralement
-        </h2>
         <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
-          Bien dormir améliore la motivation à faire de l'exercice. L'exercice améliore à son tour la qualité du sommeil et régule l'appétit. Des liens sociaux solides augmentent la probabilité de tenir ses bonnes habitudes dans la durée. Ne pas fumer démultiplie les bénéfices de tout le reste, plutôt que de s'y ajouter simplement. Ce ne sont pas des facteurs isolés qu'on additionne — ce sont des leviers qui se renforcent les uns les autres.
+          Bien dormir améliore la motivation à faire de l'exercice. L'exercice améliore à son tour la qualité du sommeil et régule l'appétit. Des liens sociaux solides augmentent la probabilité de tenir ses bonnes habitudes dans la durée. Ce ne sont pas des facteurs isolés qu'on additionne — ce sont des leviers qui se renforcent les uns les autres. C'est pour ça que l'onglet <b>Comportements</b> du classement regroupe presque tous les facteurs de grade A, les preuves les plus solides qui existent en épidémiologie humaine.
         </p>
         <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
-          C'est pour ça que l'onglet <b>Comportements</b> du classement (activité physique, sommeil, tabac, liens sociaux...) regroupe presque tous les facteurs de grade A — les preuves les plus solides qui existent en épidémiologie humaine. Aucun complément ne s'en approche.
+          Même côté alimentation, le battage médiatique ne suit pas toujours les preuves : le curcuma ou le thé vert captent l'attention, mais les recommandations de référence en prévention (WCRF/AICR) misent avant tout sur des aliments ordinaires — céréales complètes, légumineuses, crucifères, légumes verts, huile d'olive — et déconseillent même l'usage de compléments à visée préventive.
         </p>
-
-        <DotDivider />
-
-        <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 21, fontWeight: 600, margin: "0 0 12px" }}>
-          Même côté alimentation, le battage médiatique ne suit pas les preuves
-        </h2>
-        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
-          Le curcuma, le thé vert ou les baies exotiques captent l'attention — mais si l'on classe les aliments selon la solidité des preuves humaines (cohortes prospectives, méta-analyses) plutôt que selon leur réputation, ce ne sont pas eux qui arrivent en tête. Les recommandations de référence en prévention (WCRF/AICR) misent sur des aliments bien plus ordinaires : céréales complètes, légumineuses, crucifères (brocoli, chou), légumes verts et huile d'olive. Ces organismes de référence déconseillent même explicitement l'usage de compléments à visée préventive.
-        </p>
-        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
-          Ce n'est pas que le curcuma ou le thé vert soient sans intérêt — on documente leurs effets en détail dans leurs fiches respectives. C'est juste qu'ils ne remplacent pas les fondamentaux, et que la hype médiatique n'est pas un bon indicateur de la solidité des preuves.
-        </p>
-
-        <div style={{
-          borderRadius: 12, overflow: "hidden", margin: "28px 0", position: "relative", height: 160,
-        }}>
-          <img src="/images/veggies-stack.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        <div style={{ background: "#fff", border: "1px solid #DDD5BE", borderLeft: `4px solid ${FOREST}`, borderRadius: 8, padding: "18px 22px", margin: "22px 0" }}>
+          <div style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: 15, marginBottom: 8 }}>En pratique</div>
+          <div style={{ fontSize: 14, color: "#2A2A22" }}>
+            Avant d'optimiser un détail, assure-toi des fondamentaux : sommeil suffisant, activité physique régulière, alimentation peu transformée, liens sociaux entretenus, pas de tabac. Le reste — curcuma, oméga-3, ail — vient ensuite affiner, pas remplacer.
+          </div>
         </div>
+      </div>
 
-        <div style={{ background: "#FBF8F0", border: "1px solid #DDD5BE", borderTop: "4px solid #F0662D", borderRadius: 12, padding: "22px 24px", margin: "28px 0" }}>
-          <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 600, margin: "0 0 10px" }}>En pratique</h3>
-          <p style={{ fontSize: 15, color: "#2A2A22", marginBottom: 0 }}>
-            Avant d'optimiser un détail (quel complément, quel super-aliment), assure-toi d'abord des fondamentaux : sommeil suffisant, activité physique régulière, alimentation majoritairement composée d'aliments peu transformés, liens sociaux entretenus, pas de tabac. Le reste — curcuma, oméga-3, ail — vient ensuite affiner, pas remplacer.
-          </p>
+      <div style={{ background: FOREST_DARK, color: "#EDEBDD", padding: "26px 24px" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: 20, alignItems: "center" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, fontStyle: "italic", fontFamily: "'Fraunces', serif", fontSize: 13.5, maxWidth: 320 }}>
+            <Leaf size={16} color={SAGE} />
+            « Prendre soin de soi aujourd'hui, c'est offrir du temps à la vie de demain. »
+          </div>
+          <div style={{ display: "flex", gap: 26, flexWrap: "wrap" }}>
+            {trust.map((t, i) => (
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 11.5 }}>
+                <t.icon size={15} color={SAGE} />
+                {t.label}
+              </div>
+            ))}
+          </div>
         </div>
-
-        <p style={{ fontSize: 15, color: "#6B6558" }}>
-          Explore l'onglet <b>Classement</b> pour voir, aliment par aliment et comportement par comportement, ce que disent réellement les preuves — avec leur niveau de solidité et leurs sources.
-        </p>
       </div>
     </div>
   );
@@ -389,32 +464,38 @@ export default function App() {
   return (
     <div>
       <nav style={{
-        display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
-        padding: "16px 0", background: "#F7F4EC",
-        borderBottom: "3px solid transparent",
-        borderImage: "linear-gradient(90deg, #E8467C, #F5B324, #F0662D, #7CB342, #E63946) 1",
-        position: "sticky", top: 0, zIndex: 10,
+        display: "flex", alignItems: "center", justifyContent: "space-between",
+        padding: "14px 24px", background: "#fff", borderBottom: "1px solid #DDD5BE",
+        position: "sticky", top: 0, zIndex: 10, maxWidth: 900, margin: "0 auto",
       }}>
         <style>{FONT_IMPORT}</style>
-        {[
-          { id: "accueil", label: "Accueil" },
-          { id: "classement", label: "Classement" },
-        ].map((p) => (
-          <button
-            key={p.id}
-            onClick={() => setPage(p.id)}
-            style={{
-              fontFamily: "'IBM Plex Mono', monospace", fontSize: 13,
-              padding: "8px 18px", borderRadius: 20,
-              border: `1.5px solid ${page === p.id ? "#1F8A6E" : "#DDD5BE"}`,
-              background: page === p.id ? "#1F8A6E" : "transparent",
-              color: page === p.id ? "#F7F4EC" : "#6B6558",
-              cursor: "pointer",
-            }}
-          >
-            {p.label}
-          </button>
-        ))}
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <TreeLogo size={32} />
+          <div>
+            <div style={{ fontFamily: "'Fraunces', serif", fontWeight: 700, fontSize: 15, color: "#1B1F1D", letterSpacing: 0.3 }}>LONGÉVITÉ</div>
+            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 8.5, color: "#6B6558", letterSpacing: 0.5 }}>VIVRE MIEUX, PLUS LONGTEMPS</div>
+          </div>
+        </div>
+        <div style={{ display: "flex", gap: 22 }}>
+          {[
+            { id: "accueil", label: "Accueil" },
+            { id: "classement", label: "Classement" },
+          ].map((p) => (
+            <button
+              key={p.id}
+              onClick={() => setPage(p.id)}
+              style={{
+                fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, letterSpacing: 0.5,
+                background: "none", border: "none", cursor: "pointer",
+                color: page === p.id ? FOREST : "#6B6558",
+                borderBottom: page === p.id ? `2px solid ${FOREST}` : "2px solid transparent",
+                paddingBottom: 4, textTransform: "uppercase",
+              }}
+            >
+              {p.label}
+            </button>
+          ))}
+        </div>
       </nav>
       {page === "accueil" ? <HomeArticle /> : <ClassementTool />}
     </div>
