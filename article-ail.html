@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>L'ail : que dit vraiment la science ? — Longévité</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+:root {
+  --ink: #1B1F1D;
+  --paper: #F7F5EE;
+  --paper-alt: #FBF8F0;
+  --accent: #2F4A34;
+  --line: #DDD5BE;
+  --muted: #6B6558;
+  --grade-a: #1F8A5C;
+  --grade-b: #8AA83B;
+  --grade-c: #E2972E;
+  --grade-d: #D65C3D;
+  --grade-e: #B23A4E;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+
+/* Header */
+.site-header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 28px 24px; max-width: 720px; margin: 0 auto;
+}
+.logo-mark { flex-shrink: 0; }
+.site-name {
+  font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; color: var(--ink);
+}
+.site-tag {
+  font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--muted);
+  letter-spacing: 0.5px; margin-top: 1px;
+}
+
+/* Hero */
+.site-header { border-bottom: 1px solid var(--line); }
+.hero { padding: 24px 24px 32px; margin: 0 -24px 0; border-bottom: 1px solid var(--line); position: relative; background: #FFFFFF; border-radius: 0 0 16px 16px; }
+.dots-row { display: flex; gap: 7px; margin: 30px 0; }
+.dots-row span { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.photo-banner { border-radius: 12px; overflow: hidden; margin: 26px 0; height: 150px; }
+.photo-banner img { width: 100%; height: 100%; object-fit: cover; }
+.hero-illustration { position: absolute; right: 0; top: 0; opacity: 0.9; }
+.kicker {
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 1.5px;
+  color: var(--accent); text-transform: uppercase; margin-bottom: 10px;
+}
+h1.title {
+  font-family: 'Fraunces', serif; font-size: 38px; font-weight: 700; margin: 0 0 14px;
+  line-height: 1.15; max-width: 480px;
+}
+.lede {
+  font-size: 16px; color: var(--muted); max-width: 480px; margin: 0 0 18px;
+}
+.global-grade {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--paper-alt); border: 1px solid var(--line); border-radius: 8px;
+  padding: 10px 16px;
+}
+.stamp {
+  width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 16px;
+  transform: rotate(-6deg); background: var(--paper);
+}
+.stamp.a { border: 2px solid var(--grade-a); color: var(--grade-a); }
+.stamp.b { border: 2px solid var(--grade-b); color: var(--grade-b); }
+.stamp.c { border: 2px solid var(--grade-c); color: var(--grade-c); }
+.stamp.d { border: 2px solid var(--grade-d); color: var(--grade-d); }
+.stamp.e { border: 2px solid var(--grade-e); color: var(--grade-e); }
+.global-grade-text { font-size: 13px; color: var(--muted); }
+.global-grade-text b { color: var(--ink); font-weight: 600; }
+
+/* Sections */
+section.block { padding: 36px 0; border-bottom: 1px solid var(--line); }
+section.block:last-of-type { border-bottom: none; }
+h2.section-title {
+  font-family: 'Fraunces', serif; font-size: 23px; font-weight: 600; margin: 0 0 6px;
+  display: flex; align-items: center; gap: 12px;
+}
+h3.sub-title {
+  font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; margin: 20px 0 8px;
+}
+.grade-chip {
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 3px 10px;
+  border-radius: 20px; font-weight: 500; white-space: nowrap;
+}
+.grade-chip.a { background: #DCF0E4; color: var(--grade-a); }
+.grade-chip.b { background: #EEF2D6; color: var(--grade-b); }
+.grade-chip.c { background: #FBEDD2; color: var(--grade-c); }
+.grade-chip.d { background: #F8DCCF; color: var(--grade-d); }
+.grade-chip.e { background: #F5DCE0; color: var(--grade-e); }
+p { margin: 0 0 14px; font-size: 15.5px; }
+.sources { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); }
+.sources-label {
+  font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;
+}
+.sources a {
+  display: block; font-size: 13px; color: var(--accent); text-decoration: none;
+  margin-bottom: 4px;
+}
+.sources a:hover { text-decoration: underline; }
+
+/* Recap table */
+table.recap { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 14px; }
+table.recap th {
+  text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+  text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted);
+  padding: 8px 10px; border-bottom: 1px solid var(--line);
+}
+table.recap td { padding: 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+table.recap td:first-child { font-weight: 500; }
+
+/* Grade definition table */
+table.grade-def { width: 100%; border-collapse: collapse; margin: 8px 0 4px; font-size: 13.5px; }
+table.grade-def th {
+  text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+  text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted);
+  padding: 8px 10px; border-bottom: 1px solid var(--line);
+}
+table.grade-def td { padding: 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.grade-def td:first-child { width: 56px; }
+.criteria-list { margin: 0 0 14px; padding-left: 20px; }
+.criteria-list li { margin-bottom: 6px; font-size: 15px; }
+.note-box {
+  background: var(--paper-alt); border: 1px solid var(--line); border-radius: 10px;
+  padding: 14px 18px; font-size: 13.5px; color: var(--muted); margin-top: 10px;
+}
+.note-box b { color: var(--ink); }
+
+/* Conclusion */
+.conclusion-box {
+  background: var(--paper-alt); border: 1px solid var(--line); border-radius: 12px;
+  padding: 24px 26px; margin-top: 8px;
+}
+.conclusion-box h3 {
+  font-family: 'Fraunces', serif; font-size: 17px; margin: 0 0 10px; font-weight: 600;
+}
+.conclusion-box p:last-child { margin-bottom: 0; }
+.disclaimer {
+  font-size: 12.5px; color: var(--muted); margin-top: 18px; font-style: italic;
+}
+
+/* Verdict */
+.verdict-box {
+  background: #FFFFFF; border: 1px solid var(--line); border-radius: 12px;
+  padding: 22px 24px; margin-top: 20px;
+}
+.verdict-stars { font-size: 20px; letter-spacing: 2px; margin-bottom: 4px; }
+.verdict-score { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+
+/* Side effect list */
+ul.effects-list { margin: 0 0 14px; padding-left: 20px; }
+ul.effects-list li { margin-bottom: 8px; font-size: 15px; }
+ul.effects-list b { font-weight: 600; }
+
+/* How-to checklist */
+ul.howto-list { list-style: none; margin: 0 0 14px; padding: 0; }
+ul.howto-list li { margin-bottom: 14px; font-size: 15px; padding-left: 26px; position: relative; }
+ul.howto-list li::before { content: "✔"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+ul.howto-list b { display: block; font-weight: 600; margin-bottom: 2px; }
+
+/* References list */
+.ref-group { margin-bottom: 16px; }
+.ref-group-title { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 6px; }
+.ref-group a { display: block; font-size: 13px; color: var(--accent); text-decoration: none; margin-bottom: 4px; }
+.ref-group a:hover { text-decoration: underline; }
+
+footer.site-footer {
+  text-align: center; font-size: 12px; color: var(--muted); padding: 30px 0 0;
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <svg class="logo-mark" width="28" height="28" viewBox="0 0 40 40">
+    <circle cx="20" cy="20" r="18" fill="none" stroke="#2F4A34" stroke-width="2"/>
+    <path d="M20 30 L20 12 M20 12 C15 12 13 8 13 8 C13 8 15 14 20 15 M20 12 C25 12 27 8 27 8 C27 8 25 14 20 15" stroke="#2F4A34" stroke-width="1.5" fill="none"/>
+  </svg>
+  <div>
+    <div class="site-name">Longévité</div>
+    <div class="site-tag">CLASSEMENTS FONDÉS SUR LES PREUVES</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <svg class="hero-illustration" width="130" height="150" viewBox="0 0 130 150">
+      <ellipse cx="65" cy="92" rx="40" ry="48" fill="#FDFBF4" stroke="#DDD5BE" stroke-width="1.5"/>
+      <path d="M65 46 C50 60 44 75 44 95 C44 112 53 128 65 132 C77 128 86 112 86 95 C86 75 80 60 65 46 Z" fill="none" stroke="#C9A227" stroke-width="1" opacity="0.55"/>
+      <path d="M65 46 L65 132 M52 52 C48 68 47 115 55 130 M78 52 C82 68 83 115 75 130" stroke="#C9A227" stroke-width="1" opacity="0.55"/>
+      <path d="M65 46 C58 36 60 20 52 10 M65 46 C72 38 70 22 80 12" stroke="#8AA83B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="52" cy="10" r="3.5" fill="#8AA83B"/>
+      <circle cx="80" cy="12" r="3.5" fill="#8AA83B"/>
+    </svg>
+    <div class="kicker">Fiche aliment</div>
+    <h1 class="title">L'ail : que dit vraiment la science ?</h1>
+    <p class="lede">L'un des aliments les plus étudiés en nutrition — et l'un des plus entourés de mythes. Voici ce que montrent réellement les données, effet par effet.</p>
+    <div class="global-grade">
+      <div class="stamp b">B</div>
+      <div class="global-grade-text"><b>Grade global : preuve modérée</b><br/>Solide sur certains effets, faible sur d'autres</div>
+    </div>
+  </div>
+
+  <section class="block">
+    <p>Depuis plus de 5 000 ans, l'ail (<em>Allium sativum</em>) est utilisé aussi bien comme aliment que comme remède traditionnel. Des civilisations égyptienne, grecque ou chinoise jusqu'à la médecine populaire moderne, on lui a attribué d'innombrables propriétés : protection contre les infections, amélioration de la circulation sanguine, prévention des cancers, renforcement de l'immunité ou encore ralentissement du vieillissement.</p>
+    <p>Aujourd'hui, l'ail est également l'un des aliments les plus étudiés en nutrition. Des centaines d'essais cliniques, de revues systématiques et de méta-analyses se sont intéressés à ses effets sur la santé. Pourtant, cette abondance de publications ne signifie pas que tous les bénéfices qui lui sont attribués sont démontrés. Certains effets reposent sur des preuves solides, d'autres sur des résultats encore fragiles, et plusieurs croyances populaires proviennent essentiellement d'études réalisées chez l'animal ou en laboratoire.</p>
+    <p>L'objectif de cet article n'est ni de promouvoir l'ail comme un « super-aliment », ni de minimiser ses qualités. Il est simplement de répondre à une question : que montrent réellement les meilleures preuves scientifiques disponibles chez l'humain ? Chaque effet présenté ci-dessous est évalué à partir des niveaux de preuve les plus élevés (méta-analyses, revues systématiques et essais cliniques randomisés), avec un grade permettant d'estimer la solidité des données.</p>
+    <div class="photo-banner"><img src="/images/veggies-fresh.jpg" alt="" /></div>
+    <div class="dots-row"><span style="background:#2F4A34"></span><span style="background:#7C9473"></span><span style="background:#A8B89C"></span><span style="background:#5C7A5A"></span><span style="background:#3F5E44"></span></div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Comment sont attribués les grades ?</h2>
+    <p>L'objectif de ce site n'est pas de compter le nombre d'études publiées, mais d'évaluer la solidité des preuves scientifiques chez l'humain. Chaque grade prend en compte plusieurs critères :</p>
+    <ul class="criteria-list">
+      <li>la qualité méthodologique des études (essais randomisés, cohortes, études observationnelles...) ;</li>
+      <li>le nombre total de participants ;</li>
+      <li>l'existence de méta-analyses ou de revues systématiques ;</li>
+      <li>la reproductibilité des résultats par des équipes de recherche indépendantes ;</li>
+      <li>la cohérence des résultats entre les différentes études.</li>
+    </ul>
+    <p>Un grade élevé ne signifie donc pas qu'un effet est spectaculaire, mais qu'il est bien démontré. À l'inverse, un grade faible ne veut pas dire que l'effet n'existe pas ; il indique simplement que les preuves sont encore limitées ou contradictoires.</p>
+    <table class="grade-def">
+      <tr><th>Niveau</th><th>Signification</th></tr>
+      <tr><td><span class="grade-chip a">A</span></td><td>Preuves solides et concordantes, confirmées par plusieurs méta-analyses ou grands essais cliniques.</td></tr>
+      <tr><td><span class="grade-chip b">B</span></td><td>Preuves modérées. Les résultats sont globalement cohérents mais des études supplémentaires pourraient encore modifier les estimations.</td></tr>
+      <tr><td><span class="grade-chip c">C</span></td><td>Preuves limitées. Les données sont encourageantes mais encore incomplètes ou parfois contradictoires.</td></tr>
+      <tr><td><span class="grade-chip d">D</span></td><td>Preuves insuffisantes. Les hypothèses sont plausibles, mais les données cliniques sont rares ou de faible qualité.</td></tr>
+      <tr><td><span class="grade-chip e">—</span></td><td>Aucune évaluation possible : absence d'essais cliniques pertinents chez l'humain ou données exclusivement expérimentales (in vitro ou animales).</td></tr>
+    </table>
+    <div class="note-box"><b>Important :</b> ces grades évaluent la qualité des preuves, pas l'importance d'un effet. Un effet modeste peut recevoir un grade A s'il est démontré avec certitude, tandis qu'un effet potentiellement important peut rester C ou D tant que les preuves sont insuffisantes.</div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Tension artérielle <span class="grade-chip b">Grade B</span></h2>
+    <p>C'est l'effet le mieux établi. Plusieurs méta-analyses d'essais randomisés contrôlés montrent que la supplémentation en ail réduit la pression artérielle systolique de 3 à 8 mmHg et la diastolique de 3 à 5 mmHg selon les analyses — un effet comparable à certains traitements antihypertenseurs de première ligne chez les personnes hypertendues. L'ampleur varie d'une méta-analyse à l'autre, mais la direction de l'effet est cohérente.</p>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/25557383/" target="_blank">Méta-analyse — ail et pression artérielle (PubMed) ↗</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6966103/" target="_blank">Revue — ail et rigidité artérielle (PMC) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Glycémie (diabète de type 2) <span class="grade-chip b">Grade B</span></h2>
+    <p>Effet moins connu mais étonnamment bien documenté. Deux méta-analyses distinctes d'essais randomisés montrent une réduction significative de la glycémie à jeun chez des patients diabétiques de type 2, avec un effet qui s'accentue à 12 et 24 semaines. Ces essais restent modestes en taille, et l'ail y était généralement utilisé en complément d'un traitement standard, pas à sa place.</p>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/29056888/" target="_blank">Méta-analyse — ail et diabète de type 2 (PubMed) ↗</a>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/26693740/" target="_blank">Méta-analyse — ail et glycémie à jeun (PubMed) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Cholestérol et triglycérides <span class="grade-chip c">Grade C</span></h2>
+    <p>Résultats plus mitigés. Une méta-analyse de 26 essais a trouvé une réduction modeste du cholestérol total et des triglycérides, sans effet significatif sur le LDL ni le HDL. Une autre, limitée aux essais de meilleure qualité méthodologique, a conclu que l'effet devenait non significatif une fois le régime alimentaire contrôlé. Un effet probablement réel, mais modeste et sensible à la rigueur de l'étude.</p>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/22234974/" target="_blank">Méta-analyse — ail et profil lipidique (PubMed) ↗</a>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/10975959/" target="_blank">Méta-analyse — ail pour l'hypercholestérolémie (PubMed) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Cancers digestifs <span class="grade-chip c">Grade C</span></h2>
+    <p>Les études cas-témoins montrent une association assez cohérente entre consommation élevée d'ail et risque réduit de cancer de l'estomac et colorectal. Mais les deux grandes études de cohorte prospectives américaines — un design plus fiable — n'ont pas confirmé cette association de façon significative. Un exemple typique où le type d'étude change la conclusion.</p>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/11010950/" target="_blank">Méta-analyse — ail, cancers digestifs (PubMed) ↗</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6103830/" target="_blank">Cohorte — association non confirmée (PMC) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Prévention du rhume <span class="grade-chip d">Grade D</span></h2>
+    <p>Contrairement à une croyance très répandue, la revue Cochrane sur ce sujet est sans appel : un seul essai clinique de qualité suffisante a été identifié sur toute la littérature existante. Cet essai isolé suggérait moins d'épisodes de rhume, mais la revue conclut que les preuves sont insuffisantes pour affirmer un effet préventif ou curatif. Ce n'est pas démenti — mais la base scientifique est bien plus fine qu'on ne le pense.</p>
+    <div class="sources">
+      <div class="sources-label">Source</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/25386977/" target="_blank">Revue Cochrane — ail et rhume (PubMed) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Effets antimicrobiens chez l'humain <span class="grade-chip e">Non gradé</span></h2>
+    <p>L'ail montre une activité antibactérienne et antifongique réelle... en laboratoire, en éprouvette. Chez l'humain, les données cliniques sont quasi inexistantes, à une exception : quelques petits essais suggèrent qu'ajouter de l'allicine à un traitement antibiotique standard améliore l'éradication de la bactérie <em>Helicobacter pylori</em>. En dehors de ce cas précis, il n'existe pas d'essai clinique de bonne qualité testant l'ail comme antimicrobien en conditions réelles. « L'ail est un antibiotique naturel » n'est donc pas faux sur le principe biochimique, mais largement non testé à l'échelle clinique.</p>
+    <div class="sources">
+      <div class="sources-label">Source</div>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8362743/" target="_blank">Revue — propriétés antibactériennes de l'ail (PMC) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Fonction hépatique (NAFLD) <span class="grade-chip b">Grade B</span></h2>
+    <p>Deux méta-analyses d'essais randomisés, portant sur des patients atteints de stéatose hépatique non alcoolique, montrent une amélioration des enzymes hépatiques (ALT, AST), du profil lipidique et une régression de la stéatose évaluée par échographie. Le nombre total de participants reste modeste (une centaine à un peu plus de 200 selon les analyses) et les essais proviennent d'un nombre limité d'équipes de recherche — un signal prometteur, mais qui gagnerait à être répliqué plus largement.</p>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/38223588/" target="_blank">Méta-analyse — ail et maladie hépatique chronique (PubMed) ↗</a>
+      <a href="https://www.sciencedirect.com/science/article/pii/S1756464622003644" target="_blank">Méta-analyse — ail et NAFLD (ScienceDirect) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Marqueurs inflammatoires <span class="grade-chip b">Grade B</span></h2>
+    <p>Une méta-analyse de 16 essais randomisés (2019) montre une réduction significative de la CRP, de l'IL-6 et du TNF-α, trois marqueurs sanguins de l'inflammation. Une seconde méta-analyse, portant sur davantage d'essais (17), confirme l'effet sur la CRP mais ne retrouve pas d'effet significatif sur l'IL-6 — une divergence qui illustre bien pourquoi il ne faut jamais se fier à une seule méta-analyse. L'effet le plus robuste et reproduit concerne la CRP.</p>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/30949665/" target="_blank">Méta-analyse — ail, CRP, TNF, IL-6 (PubMed) ↗</a>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/32673835/" target="_blank">Méta-analyse — ail et marqueurs inflammatoires (PubMed) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Immunité générale (hors rhume) <span class="grade-chip c">Grade C</span></h2>
+    <p>Quelques essais randomisés, principalement issus d'une même équipe de recherche, rapportent une meilleure prolifération des cellules NK et γδ-T (deux types de cellules immunitaires) après supplémentation en extrait d'ail vieilli. Prometteur, mais le nombre d'essais indépendants reste faible et les tailles d'échantillon modestes (50 à 120 participants) — une réplication par d'autres équipes serait nécessaire avant de considérer cet effet comme bien établi.</p>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/22280901/" target="_blank">Essai randomisé — ail, cellules NK et γδ-T (PubMed) ↗</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7402177/" target="_blank">Revue — effets immunitaires de l'ail (PMC) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Cognition et prévention des démences <span class="grade-chip d">Grade D</span></h2>
+    <p>C'est un cas net : à ce jour, <b>aucun essai clinique n'a testé chez l'humain</b> si l'ail ou l'extrait d'ail vieilli améliore les fonctions cognitives ou prévient le déclin lié à l'âge. Toutes les données positives proviennent d'études animales ou in vitro. L'hypothèse est plausible (effet sur la tension artérielle, facteur de risque connu de démence), mais rien ne permet aujourd'hui d'affirmer un bénéfice cognitif direct chez l'humain.</p>
+    <div class="sources">
+      <div class="sources-label">Source</div>
+      <a href="https://www.alzdiscovery.org/cognitive-vitality/ratings/aged-garlic-extract" target="_blank">Alzheimer's Drug Discovery Foundation — revue sur l'ail et la cognition ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Effets secondaires et précautions</h2>
+    <ul class="effects-list">
+      <li><b>Digestifs :</b> reflux, ballonnements, mauvaise haleine et odeur corporelle sont fréquents mais bénins, surtout avec l'ail cru ou en fortes doses.</li>
+      <li><b>Risque de saignement :</b> l'ail a un effet antiplaquettaire réel. Les compléments concentrés sont associés à un risque de saignement chirurgical, indépendamment de toute prise d'anticoagulant. Ce risque augmente encore en association avec des anticoagulants ou antiagrégants (warfarine, aspirine, clopidogrel).</li>
+      <li><b>Interactions médicamenteuses :</b> prudence en cas de traitement anticoagulant, antidiabétique (risque d'hypoglycémie additive) ou antihypertenseur (risque d'hypotension additive).</li>
+      <li><b>Allergies :</b> rares mais possibles, notamment cutanées au contact de l'ail cru.</li>
+      <li><b>Alimentaire vs supplément :</b> l'ail consommé en cuisine, en quantités normales, est considéré comme sûr pour la grande majorité des gens. Le risque concerne surtout les formes concentrées en gélules.</li>
+    </ul>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://www.nccih.nih.gov/health/garlic" target="_blank">NCCIH (NIH) — utilité et sécurité de l'ail ↗</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9586694/" target="_blank">Revue — compléments alimentaires et risque de saignement (PMC) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Ce qu'il faut retenir</h2>
+    <table class="recap">
+      <tr><th>Effet</th><th>Grade</th><th>Fiabilité</th></tr>
+      <tr><td>Tension artérielle</td><td><span class="grade-chip b">B</span></td><td>Assez solide, effet reproduit</td></tr>
+      <tr><td>Glycémie (diabète type 2)</td><td><span class="grade-chip b">B</span></td><td>Solide sur essais modestes</td></tr>
+      <tr><td>Cholestérol / triglycérides</td><td><span class="grade-chip c">C</span></td><td>Réel mais modeste</td></tr>
+      <tr><td>Cancers digestifs</td><td><span class="grade-chip c">C</span></td><td>Vu en cas-témoins, non confirmé en cohorte</td></tr>
+      <tr><td>Prévention du rhume</td><td><span class="grade-chip d">D</span></td><td>Quasi aucune donnée clinique solide</td></tr>
+      <tr><td>Effet antimicrobien (humain)</td><td>—</td><td>Solide en labo, intestable en clinique à ce jour</td></tr>
+    </table>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Conclusion et recommandations</h2>
+    <div class="conclusion-box">
+      <h3>L'ail mérite sa place dans l'assiette, pas forcément dans la pharmacie</h3>
+      <p>L'ail fait partie des rares aliments dont certains bénéfices sont soutenus par plusieurs essais cliniques et méta-analyses. Son effet sur la pression artérielle est aujourd'hui le mieux établi, tandis que les données concernant la glycémie sont également encourageantes. En revanche, pour de nombreux autres bénéfices souvent mis en avant — prévention du cancer, renforcement de l'immunité, protection contre le rhume ou amélioration des fonctions cognitives — les preuves restent limitées ou insuffisantes.</p>
+      <p>Il est également important de rappeler que les bénéfices observés dans les études sont modestes. L'ail ne remplace ni une alimentation équilibrée, ni une activité physique régulière, ni un bon sommeil. Comme la plupart des aliments, il s'inscrit dans une stratégie globale de santé plutôt que comme une solution à lui seul.</p>
+    </div>
+    <div class="verdict-box">
+      <h3 class="sub-title" style="margin-top:0;">Notre verdict</h3>
+      <div class="verdict-stars">⭐⭐⭐⭐☆</div>
+      <div class="verdict-score">VERDICT GLOBAL : 4/5</div>
+      <p>L'ail fait partie des aliments dont les bénéfices sont les mieux documentés en nutrition, sans pour autant être un « super-aliment ». Les preuves les plus solides concernent son effet sur la pression artérielle, avec plusieurs méta-analyses montrant une baisse modérée mais reproductible chez les personnes hypertendues. Les données sont également encourageantes concernant la glycémie chez les personnes atteintes de diabète de type 2, ainsi que certains marqueurs de l'inflammation.</p>
+      <p>En revanche, les effets souvent mis en avant dans les médias — prévention du cancer, renforcement de l'immunité, prévention du rhume ou protection contre les maladies neurodégénératives — reposent aujourd'hui sur des preuves limitées ou insuffisantes.</p>
+      <p style="margin-bottom:0;"><b>Notre recommandation :</b> intégrer régulièrement de l'ail dans une alimentation équilibrée est une excellente habitude. En revanche, les compléments alimentaires concentrés n'apportent pas de bénéfice clairement démontré chez la majorité des personnes en bonne santé et doivent être utilisés avec prudence.</p>
+    </div>
+    <p class="disclaimer">Cet article a un but informatif et ne remplace pas un avis médical individualisé.</p>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Comment le consommer ?</h2>
+    <p>Les bénéfices potentiels de l'ail dépendent non seulement de la quantité consommée, mais également de la manière dont il est préparé. En effet, son principal composé bioactif, l'allicine, n'est pas présent dans la gousse intacte. Il se forme uniquement lorsque l'ail est coupé, haché ou écrasé grâce à l'action d'une enzyme appelée alliinase. Pour préserver au mieux ces composés :</p>
+    <ul class="howto-list">
+      <li><b>Écraser ou hacher l'ail</b>Couper ou écraser les gousses permet la formation de l'allicine.</li>
+      <li><b>Attendre environ 10 minutes avant la cuisson</b>Ce délai laisse le temps à l'alliinase de produire une quantité importante d'allicine avant que la chaleur ne l'inactive.</li>
+      <li><b>Éviter les cuissons longues</b>Une cuisson prolongée ou à température élevée réduit fortement la quantité d'allicine disponible. Lorsque cela est possible, il est préférable d'ajouter l'ail en fin de cuisson ou de le consommer cru.</li>
+      <li><b>Une consommation régulière est préférable</b>Les études ne permettent pas de définir une dose idéale. Cependant, une consommation de 1 à 2 gousses fraîches par jour, intégrée à une alimentation équilibrée, correspond aux quantités généralement utilisées dans les études observationnelles et apparaît raisonnable pour la majorité des adultes.</li>
+      <li><b>Les compléments alimentaires ne sont pas équivalents</b>Les essais cliniques utilisent des extraits très différents (poudre d'ail, extrait vieilli, huile d'ail, allicine stabilisée…), ce qui explique des résultats parfois divergents. Les effets observés avec un complément ne peuvent donc pas être généralisés à tous les produits disponibles dans le commerce.</li>
+    </ul>
+    <h3 class="sub-title">Qui doit être prudent ?</h3>
+    <p>Les compléments fortement dosés sont déconseillés sans avis médical en cas :</p>
+    <ul class="criteria-list">
+      <li>de traitement anticoagulant ou antiagrégant ;</li>
+      <li>de traitement antihypertenseur ou antidiabétique (effet potentiellement additif) ;</li>
+      <li>d'intervention chirurgicale programmée ;</li>
+      <li>d'antécédents de troubles digestifs importants.</li>
+    </ul>
+    <p>L'ail consommé comme aliment reste, quant à lui, considéré comme sûr pour la grande majorité de la population.</p>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Références scientifiques</h2>
+    <div class="ref-group">
+      <div class="ref-group-title">Tension artérielle</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/25557383/" target="_blank">Méta-analyse — ail et pression artérielle (PubMed) ↗</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6966103/" target="_blank">Revue — ail et rigidité artérielle (PMC) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Glycémie</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/29056888/" target="_blank">Méta-analyse — ail et diabète de type 2 (PubMed) ↗</a>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/26693740/" target="_blank">Méta-analyse — ail et glycémie à jeun (PubMed) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Cholestérol</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/22234974/" target="_blank">Méta-analyse — ail et profil lipidique (PubMed) ↗</a>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/10975959/" target="_blank">Méta-analyse — ail pour l'hypercholestérolémie (PubMed) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Cancers digestifs</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/11010950/" target="_blank">Méta-analyse — ail et cancers digestifs (PubMed) ↗</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6103830/" target="_blank">Cohorte prospective (PMC) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Rhume</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/25386977/" target="_blank">Revue Cochrane (PubMed) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Effets antimicrobiens</div>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8362743/" target="_blank">Revue (PMC) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Fonction hépatique</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/38223588/" target="_blank">Méta-analyse — maladie hépatique chronique (PubMed) ↗</a>
+      <a href="https://www.sciencedirect.com/science/article/pii/S1756464622003644" target="_blank">Méta-analyse — NAFLD (ScienceDirect) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Marqueurs inflammatoires</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/30949665/" target="_blank">Méta-analyse — CRP, TNF-α, IL-6 (PubMed) ↗</a>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/32673835/" target="_blank">Méta-analyse — inflammation (PubMed) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Immunité</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/22280901/" target="_blank">Essai randomisé (PubMed) ↗</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7402177/" target="_blank">Revue (PMC) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Cognition</div>
+      <a href="https://www.alzdiscovery.org/cognitive-vitality/ratings/aged-garlic-extract" target="_blank">Alzheimer's Drug Discovery Foundation ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Sécurité</div>
+      <a href="https://www.nccih.nih.gov/health/garlic" target="_blank">NCCIH (NIH) ↗</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9586694/" target="_blank">Revue — compléments alimentaires et risque de saignement (PMC) ↗</a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-footer">Article rédigé à partir de méta-analyses et revues systématiques (PubMed, Cochrane, NCCIH).</footer>
+
+</body>
+</html>
