@@ -429,23 +429,97 @@ function HomeArticle({ onNavigate }) {
 
       <div id="philosophie" style={{ maxWidth: 680, margin: "0 auto", padding: "40px 24px 20px" }}>
         <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 26, fontWeight: 700, color: "#1B1F1D", margin: "0 0 14px" }}>
-          Ce n'est probablement pas une histoire de super-aliment
+          La santé ne se trouve pas dans une gélule
         </h2>
         <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
-          La plupart des gens arrivent ici en cherchant LE complément ou LE super-aliment qui va tout changer. C'est compréhensible — c'est aussi, le plus souvent, la mauvaise question. Les données les plus solides en santé et longévité ne pointent pas vers un ingrédient miracle, mais vers un petit ensemble de comportements de base qui se renforcent mutuellement.
+          À chaque nouvelle mode apparaissent des « super-aliments », des compléments alimentaires ou des molécules présentées comme la clé d'une vie longue et en bonne santé. Pourtant, lorsqu'on analyse les meilleures données scientifiques disponibles, le constat est toujours le même : aucun complément alimentaire ne rivalise avec les effets d'une bonne hygiène de vie.
         </p>
         <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
-          Bien dormir améliore la motivation à faire de l'exercice. L'exercice améliore à son tour la qualité du sommeil et régule l'appétit. Des liens sociaux solides augmentent la probabilité de tenir ses bonnes habitudes dans la durée. Ce ne sont pas des facteurs isolés qu'on additionne — ce sont des leviers qui se renforcent les uns les autres. C'est pour ça que l'onglet <b>Comportements</b> du classement regroupe presque tous les facteurs de grade A, les preuves les plus solides qui existent en épidémiologie humaine.
+          La longévité ne dépend pas d'un produit miracle, mais de l'accumulation de centaines de petits choix répétés chaque jour.
+        </p>
+
+        <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 19, fontWeight: 700, color: "#1B1F1D", margin: "26px 0 12px" }}>
+          Les véritables piliers d'une longue vie
+        </h3>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
+          Les études menées sur plusieurs centaines de milliers de personnes montrent qu'une poignée d'habitudes explique une grande partie du risque de maladies cardiovasculaires, de diabète, de cancer et de déclin cognitif.
+        </p>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 8 }}>
+          Les facteurs dont le niveau de preuve est le plus élevé sont :
+        </p>
+        <ul style={{ margin: "0 0 14px", paddingLeft: 20, fontSize: 15.5, color: "#2A2A22", lineHeight: 1.8 }}>
+          <li>pratiquer une activité physique régulière, associant endurance et renforcement musculaire ;</li>
+          <li>maintenir un poids de santé ;</li>
+          <li>adopter une alimentation de qualité, riche en aliments peu transformés ;</li>
+          <li>dormir suffisamment (environ 7 à 8 heures par nuit chez la plupart des adultes) ;</li>
+          <li>ne pas fumer ;</li>
+          <li>limiter la consommation d'alcool ;</li>
+          <li>gérer le stress chronique ;</li>
+          <li>conserver une vie sociale active.</li>
+        </ul>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
+          Pris ensemble, ces comportements ont un impact bien supérieur à celui de n'importe quel aliment ou supplément étudié jusqu'à présent.
+        </p>
+
+        <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 19, fontWeight: 700, color: "#1B1F1D", margin: "26px 0 12px" }}>
+          Les compléments alimentaires : utiles dans des situations précises
+        </h3>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
+          Les compléments alimentaires ne sont pas inutiles. Certains présentent un intérêt démontré lorsqu'il existe une carence, un besoin particulier ou une indication médicale.
         </p>
         <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
-          Même côté alimentation, le battage médiatique ne suit pas toujours les preuves : le curcuma ou le thé vert captent l'attention, mais les recommandations de référence en prévention (WCRF/AICR) misent avant tout sur des aliments ordinaires — céréales complètes, légumineuses, crucifères, légumes verts, huile d'olive — et déconseillent même l'usage de compléments à visée préventive.
+          En revanche, chez une personne en bonne santé, les preuves qu'ils prolongent la durée de vie ou préviennent les maladies restent limitées pour la grande majorité d'entre eux. Les revues scientifiques récentes concluent que les bénéfices observés sont généralement modestes, spécifiques à certaines populations ou encore insuffisamment démontrés.
         </p>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
+          Autrement dit, ils complètent une bonne hygiène de vie, ils ne la remplacent jamais.
+        </p>
+
+        <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 19, fontWeight: 700, color: "#1B1F1D", margin: "26px 0 12px" }}>
+          Les super-aliments n'existent pas
+        </h3>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
+          L'ail, les baies, le curcuma, le thé vert, les noix ou l'huile d'olive possèdent des propriétés nutritionnelles intéressantes. Mais aucun aliment, pris isolément, n'a démontré qu'il pouvait prévenir à lui seul les maladies ou augmenter significativement l'espérance de vie.
+        </p>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
+          Ce qui fait la différence est le modèle alimentaire dans son ensemble : beaucoup de végétaux, des céréales complètes, des légumineuses, des fruits à coque, des huiles de qualité, une consommation modérée de produits animaux et peu d'aliments ultra-transformés.
+        </p>
+
+        <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 19, fontWeight: 700, color: "#1B1F1D", margin: "26px 0 12px" }}>
+          Une approche basée sur les preuves
+        </h3>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
+          L'objectif de ce site est simple : distinguer les faits des promesses marketing.
+        </p>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 8 }}>
+          Chaque article s'appuie autant que possible sur les niveaux de preuve les plus solides :
+        </p>
+        <ul style={{ margin: "0 0 14px", paddingLeft: 20, fontSize: 15.5, color: "#2A2A22", lineHeight: 1.8 }}>
+          <li>méta-analyses ;</li>
+          <li>revues systématiques ;</li>
+          <li>essais cliniques randomisés ;</li>
+          <li>recommandations des grandes sociétés savantes.</li>
+        </ul>
+        <p style={{ fontSize: 15.5, color: "#2A2A22", marginBottom: 14 }}>
+          Lorsque les preuves sont insuffisantes ou contradictoires, cela sera clairement indiqué.
+        </p>
+
         <div style={{ background: "#fff", border: "1px solid #DDD5BE", borderLeft: `4px solid ${FOREST}`, borderRadius: 8, padding: "18px 22px", margin: "22px 0" }}>
-          <div style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: 15, marginBottom: 8 }}>En pratique</div>
+          <div style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: 15, marginBottom: 8 }}>Notre conviction</div>
           <div style={{ fontSize: 14, color: "#2A2A22" }}>
-            Avant d'optimiser un détail, assure-toi des fondamentaux : sommeil suffisant, activité physique régulière, alimentation peu transformée, liens sociaux entretenus, pas de tabac. Le reste — curcuma, oméga-3, ail — vient ensuite affiner, pas remplacer.
+            La meilleure stratégie santé n'est pas la plus spectaculaire, mais la plus durable : bien manger, bouger quotidiennement, bien dormir, entretenir ses relations sociales et éviter les comportements à risque. Ce sont ces habitudes, répétées pendant des années, qui offrent les bénéfices les plus importants pour la santé et la longévité.
           </div>
         </div>
+
+        <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 15, fontWeight: 700, color: "#1B1F1D", margin: "26px 0 10px" }}>
+          Références principales
+        </h3>
+        <ul style={{ margin: 0, paddingLeft: 20, fontSize: 12.5, color: "#5A5A4E", lineHeight: 1.8 }}>
+          <li>Kaufman MA et al. Nutritional Supplements for Healthy Aging: A Critical Analysis Review. American Journal of Lifestyle Medicine, 2024.</li>
+          <li>Evidence-Based Pathways to Healthy Aging: A Systematic Review and Meta-analysis of Lifestyle Interventions for Longevity and Well-Being, 2025.</li>
+          <li>Early Biomarkers, Risk Factors, and Functional Indicators of Healthy Longevity and Their Relationship with Diet, 2025.</li>
+          <li>How We Sleep, How We Move, How Long We Expect to Live, 2026.</li>
+          <li>Nutrition and Longevity – Diet in Centenarians, 2026.</li>
+        </ul>
       </div>
 
       <div style={{ background: FOREST_DARK, color: "#EDEBDD", padding: "26px 24px" }}>
