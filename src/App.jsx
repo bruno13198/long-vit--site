@@ -293,7 +293,7 @@ function ClassementTool({ initialTab = "aliments" }) {
         </div>
 
         {/* List */}
-        <div style={{ marginTop: 18, background: "#FBF8F0", border: "1px solid #DDD5BE", borderRadius: 10, padding: "4px 16px" }}>
+        <div style={{ marginTop: 18, background: "#FFFFFF", border: "1px solid #DDD5BE", borderRadius: 10, padding: "4px 16px" }}>
           {filtered.length === 0 ? (
             <div style={{ padding: "30px 4px", color: "#8C8570", fontSize: 14 }}>Aucun résultat pour « {query} ».</div>
           ) : (
@@ -320,7 +320,7 @@ function ClassementTool({ initialTab = "aliments" }) {
 const FOREST = "#2F4A34";
 const FOREST_DARK = "#22362A";
 const SAGE = "#7C9473";
-const CREAM = "#F7F5EE";
+const CREAM = "#FFFFFF";
 
 function TreeLogo({ size = 34 }) {
   return (
