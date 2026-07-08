@@ -342,8 +342,8 @@ function HomeArticle({ onNavigate }) {
   ];
   const articles = [
     { img: "/images/veggies-fresh.jpg", title: "L'ail : que dit vraiment la science ?", url: "/article-ail.html" },
-    { img: "/images/veggies-stack.jpg", title: "Le curcuma au-delà de la curcumine", url: "/article-curcuma.html" },
-    { img: "/images/hero-fruits.jpg", title: "La pomme : que dit vraiment la science ?", url: "/article-pomme.html" },
+    { img: "/images/curcuma-fresh.jpg", title: "Le curcuma au-delà de la curcumine", url: "/article-curcuma.html" },
+    { img: "/images/pomme-fresh.jpg", title: "La pomme : que dit vraiment la science ?", url: "/article-pomme.html" },
     { img: "/images/market-crates.jpg", title: "Le classement complet des aliments", url: "aliments" },
     { img: "/images/hero-fruits.jpg", title: "Pourquoi les comportements comptent plus", url: "philosophie" },
   ];
@@ -546,8 +546,8 @@ function HomeArticle({ onNavigate }) {
 function EtudesScientifiques() {
   const articles = [
     { img: "/images/veggies-fresh.jpg", title: "L'ail : que dit vraiment la science ?", desc: "Tension artérielle, glycémie, cancers digestifs, rhume, antimicrobien — effet par effet, sources à l'appui.", url: "/article-ail.html" },
-    { img: "/images/veggies-stack.jpg", title: "Le curcuma au-delà de la curcumine", desc: "Arthrose, glycémie, turmérones, et un point d'attention sur le foie que peu d'articles mentionnent.", url: "/article-curcuma.html" },
-    { img: "/images/hero-fruits.jpg", title: "La pomme : que dit vraiment la science ?", desc: "Cardiovasculaire, diabète, cancer, poids, asthme — effet par effet, sources à l'appui.", url: "/article-pomme.html" },
+    { img: "/images/curcuma-fresh.jpg", title: "Le curcuma au-delà de la curcumine", desc: "Arthrose, glycémie, turmérones, et un point d'attention sur le foie que peu d'articles mentionnent.", url: "/article-curcuma.html" },
+    { img: "/images/pomme-fresh.jpg", title: "La pomme : que dit vraiment la science ?", desc: "Cardiovasculaire, diabète, cancer, poids, asthme — effet par effet, sources à l'appui.", url: "/article-pomme.html" },
   ];
   return (
     <div style={{ minHeight: "100vh", background: CREAM, fontFamily: "'Inter', sans-serif" }}>
