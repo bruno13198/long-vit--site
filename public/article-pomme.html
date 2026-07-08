@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>La pomme : que dit vraiment la science ? — Longévité</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+:root {
+  --ink: #1B1F1D;
+  --paper: #FFFFFF;
+  --paper-alt: #FFFFFF;
+  --accent: #2F4A34;
+  --line: #DDD5BE;
+  --muted: #6B6558;
+  --grade-a: #1F8A5C;
+  --grade-b: #8AA83B;
+  --grade-c: #E2972E;
+  --grade-d: #D65C3D;
+  --grade-e: #B23A4E;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+
+/* Header */
+.site-header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 28px 24px; max-width: 720px; margin: 0 auto;
+}
+.logo-mark { flex-shrink: 0; }
+.site-name {
+  font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; color: var(--ink);
+}
+.site-tag {
+  font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--muted);
+  letter-spacing: 0.5px; margin-top: 1px;
+}
+
+/* Hero */
+.site-header { border-bottom: 1px solid var(--line); }
+.hero { padding: 24px 24px 32px; margin: 0 -24px 0; border-bottom: 1px solid var(--line); position: relative; background: #FFFFFF; border-radius: 0 0 16px 16px; }
+.dots-row { display: flex; gap: 7px; margin: 30px 0; }
+.dots-row span { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.photo-banner { border-radius: 12px; overflow: hidden; margin: 26px 0; height: 150px; }
+.photo-banner img { width: 100%; height: 100%; object-fit: cover; }
+.hero-illustration { position: absolute; right: 0; top: 0; opacity: 0.9; }
+.kicker {
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 1.5px;
+  color: var(--accent); text-transform: uppercase; margin-bottom: 10px;
+}
+h1.title {
+  font-family: 'Fraunces', serif; font-size: 38px; font-weight: 700; margin: 0 0 14px;
+  line-height: 1.15; max-width: 480px;
+}
+.lede {
+  font-size: 16px; color: var(--muted); max-width: 480px; margin: 0 0 18px;
+}
+.global-grade {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--paper-alt); border: 1px solid var(--line); border-radius: 8px;
+  padding: 10px 16px;
+}
+.stamp {
+  width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 16px;
+  transform: rotate(-6deg); background: var(--paper);
+}
+.stamp.a { border: 2px solid var(--grade-a); color: var(--grade-a); }
+.stamp.b { border: 2px solid var(--grade-b); color: var(--grade-b); }
+.stamp.c { border: 2px solid var(--grade-c); color: var(--grade-c); }
+.stamp.d { border: 2px solid var(--grade-d); color: var(--grade-d); }
+.stamp.e { border: 2px solid var(--grade-e); color: var(--grade-e); }
+.global-grade-text { font-size: 13px; color: var(--muted); }
+.global-grade-text b { color: var(--ink); font-weight: 600; }
+
+/* Sections */
+section.block { padding: 36px 0; border-bottom: 1px solid var(--line); }
+section.block:last-of-type { border-bottom: none; }
+h2.section-title {
+  font-family: 'Fraunces', serif; font-size: 23px; font-weight: 600; margin: 0 0 6px;
+  display: flex; align-items: center; gap: 12px;
+}
+h3.sub-title {
+  font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; margin: 20px 0 8px;
+}
+.grade-chip {
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 3px 10px;
+  border-radius: 20px; font-weight: 500; white-space: nowrap;
+}
+.grade-chip.a { background: #DCF0E4; color: var(--grade-a); }
+.grade-chip.b { background: #EEF2D6; color: var(--grade-b); }
+.grade-chip.c { background: #FBEDD2; color: var(--grade-c); }
+.grade-chip.d { background: #F8DCCF; color: var(--grade-d); }
+.grade-chip.e { background: #F5DCE0; color: var(--grade-e); }
+p { margin: 0 0 14px; font-size: 15.5px; }
+.sources { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); }
+.sources-label {
+  font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;
+}
+.sources a {
+  display: block; font-size: 13px; color: var(--accent); text-decoration: none;
+  margin-bottom: 4px;
+}
+.sources a:hover { text-decoration: underline; }
+
+/* Recap table */
+table.recap { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 14px; }
+table.recap th {
+  text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+  text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted);
+  padding: 8px 10px; border-bottom: 1px solid var(--line);
+}
+table.recap td { padding: 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+table.recap td:first-child { font-weight: 500; }
+
+/* Grade definition table */
+table.grade-def { width: 100%; border-collapse: collapse; margin: 8px 0 4px; font-size: 13.5px; }
+table.grade-def th {
+  text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+  text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted);
+  padding: 8px 10px; border-bottom: 1px solid var(--line);
+}
+table.grade-def td { padding: 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.grade-def td:first-child { width: 56px; }
+.criteria-list { margin: 0 0 14px; padding-left: 20px; }
+.criteria-list li { margin-bottom: 6px; font-size: 15px; }
+.note-box {
+  background: var(--paper-alt); border: 1px solid var(--line); border-radius: 10px;
+  padding: 14px 18px; font-size: 13.5px; color: var(--muted); margin-top: 10px;
+}
+.note-box b { color: var(--ink); }
+
+/* Conclusion */
+.conclusion-box {
+  background: var(--paper-alt); border: 1px solid var(--line); border-radius: 12px;
+  padding: 24px 26px; margin-top: 8px;
+}
+.conclusion-box h3 {
+  font-family: 'Fraunces', serif; font-size: 17px; margin: 0 0 10px; font-weight: 600;
+}
+.conclusion-box p:last-child { margin-bottom: 0; }
+.disclaimer {
+  font-size: 12.5px; color: var(--muted); margin-top: 18px; font-style: italic;
+}
+
+/* Verdict */
+.verdict-box {
+  background: #FFFFFF; border: 1px solid var(--line); border-radius: 12px;
+  padding: 22px 24px; margin-top: 20px;
+}
+.verdict-stars { font-size: 20px; letter-spacing: 2px; margin-bottom: 4px; }
+.verdict-score { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+
+/* Side effect list */
+ul.effects-list { margin: 0 0 14px; padding-left: 20px; }
+ul.effects-list li { margin-bottom: 8px; font-size: 15px; }
+ul.effects-list b { font-weight: 600; }
+
+/* How-to checklist */
+ul.howto-list { list-style: none; margin: 0 0 14px; padding: 0; }
+ul.howto-list li { margin-bottom: 14px; font-size: 15px; padding-left: 26px; position: relative; }
+ul.howto-list li::before { content: "✔"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+ul.howto-list b { display: block; font-weight: 600; margin-bottom: 2px; }
+
+/* References list */
+.ref-group { margin-bottom: 16px; }
+.ref-group-title { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 6px; }
+.ref-group a { display: block; font-size: 13px; color: var(--accent); text-decoration: none; margin-bottom: 4px; }
+.ref-group a:hover { text-decoration: underline; }
+
+footer.site-footer {
+  text-align: center; font-size: 12px; color: var(--muted); padding: 30px 0 0;
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <svg class="logo-mark" width="28" height="28" viewBox="0 0 40 40">
+    <circle cx="20" cy="20" r="18" fill="none" stroke="#2F4A34" stroke-width="2"/>
+    <path d="M20 30 L20 12 M20 12 C15 12 13 8 13 8 C13 8 15 14 20 15 M20 12 C25 12 27 8 27 8 C27 8 25 14 20 15" stroke="#2F4A34" stroke-width="1.5" fill="none"/>
+  </svg>
+  <div>
+    <div class="site-name">Longévité</div>
+    <div class="site-tag">CLASSEMENTS FONDÉS SUR LES PREUVES</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <svg class="hero-illustration" width="120" height="140" viewBox="0 0 120 140">
+      <path d="M60 40 C35 40 20 60 20 85 C20 108 36 125 55 125 C58 125 60 123 62 123 C64 123 66 125 69 125 C88 125 100 108 100 85 C100 58 83 40 60 40 Z" fill="#FDFBF4" stroke="#D65C3D" stroke-width="1.5" opacity="0.9"/>
+      <path d="M62 40 C62 28 68 20 62 8" stroke="#7C5A3A" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M62 16 C70 8 82 10 86 6 C82 16 72 18 62 24" fill="#8AA83B" opacity="0.85"/>
+    </svg>
+    <div class="kicker">Fiche aliment</div>
+    <h1 class="title">La pomme : que dit vraiment la science ?</h1>
+    <p class="lede">« An apple a day keeps the doctor away » — un dicton populaire depuis plus d'un siècle. Voici ce que montrent réellement les études, effet par effet.</p>
+    <div class="global-grade">
+      <div class="stamp b">B</div>
+      <div class="global-grade-text"><b>Grade global : preuve modérée</b><br/>Solide sur certains effets, faible sur d'autres</div>
+    </div>
+  </div>
+
+  <section class="block">
+    <p>Le dicton « an apple a day keeps the doctor away » (« une pomme par jour éloigne le médecin ») remonte au moins au XIX<sup>e</sup> siècle en Angleterre. Depuis, la pomme est devenue l'un des fruits les plus consommés et les plus étudiés au monde, en grande partie parce qu'elle est accessible, peu coûteuse et disponible toute l'année.</p>
+    <p>Ce statut de fruit populaire a suscité un nombre important d'études épidémiologiques et d'essais cliniques portant sur ses effets cardiovasculaires, métaboliques, anticancéreux ou respiratoires. Comme pour l'ail, cette abondance de publications ne signifie pas que tous les bénéfices attribués à la pomme sont solidement démontrés : certains effets reposent sur des méta-analyses convergentes, d'autres sur une poignée d'études anciennes ou de faible puissance.</p>
+    <p>L'objectif de cet article est le même que pour les autres fiches du site : distinguer ce qui est bien démontré chez l'humain de ce qui relève encore de l'hypothèse, à partir des niveaux de preuve les plus élevés disponibles (méta-analyses, revues systématiques, essais cliniques randomisés, grandes cohortes).</p>
+    <div class="photo-banner"><img src="/images/hero-fruits.jpg" alt="" /></div>
+    <div class="dots-row"><span style="background:#D65C3D"></span><span style="background:#E2972E"></span><span style="background:#8AA83B"></span><span style="background:#5C7A5A"></span><span style="background:#2F4A34"></span></div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Comment sont attribués les grades ?</h2>
+    <p>L'objectif de ce site n'est pas de compter le nombre d'études publiées, mais d'évaluer la solidité des preuves scientifiques chez l'humain. Chaque grade prend en compte plusieurs critères :</p>
+    <ul class="criteria-list">
+      <li>la qualité méthodologique des études (essais randomisés, cohortes, études observationnelles...) ;</li>
+      <li>le nombre total de participants ;</li>
+      <li>l'existence de méta-analyses ou de revues systématiques ;</li>
+      <li>la reproductibilité des résultats par des équipes de recherche indépendantes ;</li>
+      <li>la cohérence des résultats entre les différentes études.</li>
+    </ul>
+    <p>Un grade élevé ne signifie donc pas qu'un effet est spectaculaire, mais qu'il est bien démontré. À l'inverse, un grade faible ne veut pas dire que l'effet n'existe pas ; il indique simplement que les preuves sont encore limitées ou contradictoires.</p>
+    <table class="grade-def">
+      <tr><th>Niveau</th><th>Signification</th></tr>
+      <tr><td><span class="grade-chip a">A</span></td><td>Preuves solides et concordantes, confirmées par plusieurs méta-analyses ou grands essais cliniques.</td></tr>
+      <tr><td><span class="grade-chip b">B</span></td><td>Preuves modérées. Les résultats sont globalement cohérents mais des études supplémentaires pourraient encore modifier les estimations.</td></tr>
+      <tr><td><span class="grade-chip c">C</span></td><td>Preuves limitées. Les données sont encourageantes mais encore incomplètes ou parfois contradictoires.</td></tr>
+      <tr><td><span class="grade-chip d">D</span></td><td>Preuves insuffisantes. Les hypothèses sont plausibles, mais les données cliniques sont rares ou de faible qualité.</td></tr>
+      <tr><td><span class="grade-chip e">—</span></td><td>Aucune évaluation possible : absence d'essais cliniques pertinents chez l'humain ou données exclusivement expérimentales (in vitro ou animales).</td></tr>
+    </table>
+    <div class="note-box"><b>Important :</b> ces grades évaluent la qualité des preuves, pas l'importance d'un effet. Un effet modeste peut recevoir un grade A s'il est démontré avec certitude, tandis qu'un effet potentiellement important peut rester C ou D tant que les preuves sont insuffisantes.</div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Santé cardiovasculaire <span class="grade-chip b">Grade B</span></h2>
+    <p>C'est le domaine le mieux documenté. Une méta-analyse d'essais randomisés portant sur la pomme ou ses polyphénols montre une augmentation significative du bon cholestérol (HDL) et une baisse de la protéine C-réactive (CRP), un marqueur d'inflammation associé au risque cardiovasculaire. Une autre méta-analyse combinant essais et cohortes, portant sur plus de 36 000 participants, retrouve une réduction de 14 % de la mortalité cardiovasculaire chez les plus gros consommateurs de pommes et de poires, sans hétérogénéité entre les études.</p>
+    <p>En revanche, sur les marqueurs pris isolément — cholestérol total, LDL, tension artérielle — les essais cliniques restent mitigés : certains montrent une baisse modeste, d'autres ne trouvent pas de différence significative une fois les résultats regroupés. L'effet global sur la santé cardiovasculaire semble donc réel, mais il ne repose pas sur un mécanisme unique et spectaculaire.</p>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/34565081/" target="_blank">Méta-analyse — pomme, polyphénols et facteurs de risque cardiovasculaire (PubMed) ↗</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6813372/" target="_blank">Méta-analyse — pommes, poires et risque cardiométabolique (PMC) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Diabète de type 2 <span class="grade-chip b">Grade B</span></h2>
+    <p>Une méta-analyse de cinq cohortes prospectives, portant sur plus de 228 000 participants et 14 000 cas incidents de diabète de type 2, montre une réduction du risque d'environ 7 % chez les plus gros consommateurs de pommes et de poires par rapport aux plus faibles consommateurs, avec une relation dose-réponse cohérente. L'effet est modeste mais reproduit à travers plusieurs cohortes indépendantes, ce qui renforce sa crédibilité malgré l'absence d'essais randomisés de grande ampleur sur ce critère précis.</p>
+    <div class="sources">
+      <div class="sources-label">Source</div>
+      <a href="https://pubs.rsc.org/en/content/articlepdf/2017/fo/c6fo01378c" target="_blank">Méta-analyse — pomme, poire et risque de diabète de type 2 (Food & Function) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Cholestérol et profil lipidique <span class="grade-chip c">Grade C</span></h2>
+    <p>Un essai randomisé contrôlé en crossover, mené chez des adultes légèrement hypercholestérolémiques consommant deux pommes par jour pendant huit semaines, a montré une baisse significative du cholestérol total, du LDL et des triglycérides par rapport à une boisson contrôle de même valeur calorique. Un résultat encourageant, mais issu d'un essai unique et de taille modeste (40 participants).</p>
+    <p>À l'inverse, une méta-analyse regroupant 18 essais cliniques sur la pomme et ses dérivés ne retrouve qu'une tendance à la baisse du cholestérol total et du LDL, non significative une fois tous les essais combinés. L'effet devient significatif uniquement dans le sous-groupe comparé à un placebo strict, et surtout chez les personnes ayant un cholestérol de départ élevé.</p>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6997084/" target="_blank">Essai randomisé — deux pommes par jour et cholestérol (AJCN, PMC) ↗</a>
+      <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9016272/" target="_blank">Méta-analyse — pomme et marqueurs métaboliques (PMC) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Cancer <span class="grade-chip c">Grade C</span></h2>
+    <p>Une méta-analyse d'études observationnelles (cas-témoins et cohortes) associe une consommation élevée de pommes à un risque réduit de cancer, notamment au niveau du poumon, du côlon et du tractus digestif. L'association est la plus cohérente pour le cancer du poumon, retrouvée dans plusieurs cohortes indépendantes.</p>
+    <p>Ces résultats reposent uniquement sur des études d'observation : il est impossible de mener un essai randomisé testant la pomme contre un placebo sur plusieurs années pour un critère aussi rare que l'incidence du cancer. Le lien de causalité reste donc probable mais non démontré au sens strict, et une part de l'association pourrait refléter un mode de vie globalement plus sain chez les gros consommateurs de fruits.</p>
+    <div class="sources">
+      <div class="sources-label">Source</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/27000627/" target="_blank">Méta-analyse — pomme et risque de cancer (PubMed) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Mortalité toutes causes <span class="grade-chip c">Grade C</span></h2>
+    <p>Une étude de cohorte australienne ayant suivi 1 456 femmes de plus de 70 ans pendant 15 ans a montré que celles consommant l'équivalent d'une pomme par jour avaient un risque de décès toutes causes réduit de 35 % par rapport aux plus faibles consommatrices, avec une relation dose-effet significative. La mortalité par cancer était également plus faible chez les grandes consommatrices de pommes.</p>
+    <p>Il s'agit d'une cohorte unique, menée dans une population spécifique (femmes âgées australiennes), non répliquée à l'identique ailleurs. Elle reste néanmoins cohérente avec la réduction de mortalité cardiovasculaire observée dans la méta-analyse combinant plusieurs cohortes citée plus haut.</p>
+    <div class="sources">
+      <div class="sources-label">Source</div>
+      <a href="https://www.cambridge.org/core/journals/british-journal-of-nutrition/article/apple-intake-is-inversely-associated-with-allcause-and-diseasespecific-mortality-in-elderly-women/EC7A2E4916E6A660649736CE42189685" target="_blank">Cohorte — pomme et mortalité chez la femme âgée (British Journal of Nutrition) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Poids et satiété <span class="grade-chip c">Grade C</span></h2>
+    <p>La pomme entière ralentit la vidange gastrique et procure une sensation de satiété plus marquée que la compote ou le jus, du fait de sa teneur en fibres (pectine) et de sa structure physique. Un essai randomisé chez des femmes en surpoids a montré une perte de poids modeste après l'ajout de trois pommes par jour au régime alimentaire, contrairement au groupe consommant des biscuits à l'avoine à apport calorique équivalent. La méta-analyse d'essais randomisés sur la pomme retrouve une diminution significative de l'IMC, mais pas du poids corporel en tant que tel.</p>
+    <p>Ces résultats restent à interpréter avec prudence : des revues plus larges sur l'ensemble des fruits et légumes concluent que l'augmentation de leur consommation, prise isolément, n'a pas d'effet perceptible sur la perte de poids en l'absence de restriction calorique globale.</p>
+    <div class="sources">
+      <div class="sources-label">Source</div>
+      <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6813372/" target="_blank">Méta-analyse — pomme, poire et IMC (PMC) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Fonction pulmonaire et asthme <span class="grade-chip d">Grade D</span></h2>
+    <p>Plusieurs études observationnelles, anciennes pour la plupart (cohortes des années 1990-2000), rapportent une association entre consommation de pommes et meilleure fonction pulmonaire, ou risque réduit d'asthme et de bronchopneumopathie chronique obstructive (BPCO). L'hypothèse repose sur la richesse de la pomme en flavonoïdes, aux propriétés anti-inflammatoires démontrées en laboratoire.</p>
+    <p>Cependant, aucune méta-analyse récente ne vient consolider ces observations isolées, et une grande cohorte britannique (UK Biobank) n'a pas retrouvé d'association entre l'apport en flavonoïdes alimentaires et l'incidence de l'asthme chez l'adulte, seulement avec la BPCO. L'effet spécifique de la pomme sur les voies respiratoires reste donc une hypothèse plausible mais insuffisamment confirmée.</p>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://publications.ersnet.org/content/erj/26/3/449" target="_blank">Étude — flavonoïdes alimentaires et asthme (European Respiratory Journal) ↗</a>
+      <a href="https://publications.ersnet.org/content/erj/50/6/1602286" target="_blank">Cohorte — antioxydants alimentaires et déclin de la fonction pulmonaire (ERJ) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Microbiote intestinal <span class="grade-chip e">Non gradé</span></h2>
+    <p>La pectine de la pomme est fermentée par les bactéries du côlon et sert de substrat à des espèces potentiellement bénéfiques comme <em>Faecalibacterium prausnitzii</em>. Un essai contrôlé randomisé chez l'adulte sain a montré que la consommation de pommes riches en polyphénols modifiait la composition du microbiote fécal et l'expression de gènes immunitaires circulants, et un essai japonais plus récent associe la consommation régulière de pommes à des profils de microbiote différents selon l'entérotype de départ.</p>
+    <p>Ces résultats sont réels mais préliminaires : les essais sont de petite taille, les modifications de microbiote observées ne sont pas encore reliées à des bénéfices cliniques mesurables (moins d'infections, meilleure digestion rapportée, etc.), et davantage de réplications seraient nécessaires avant de tirer des conclusions fermes.</p>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8065949/" target="_blank">Essai randomisé — pomme, microbiote fécal et immunité (PMC) ↗</a>
+      <a href="https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2026.1797920/full" target="_blank">Essai — consommation de pommes et profils de microbiote (Frontiers in Nutrition) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Effets secondaires et précautions</h2>
+    <ul class="effects-list">
+      <li><b>Pépins :</b> ils contiennent de l'amygdaline, un composé qui libère du cyanure lorsqu'il est mâché ou broyé. Le risque réel est très faible : il faudrait mâcher et avaler plusieurs dizaines à plusieurs centaines de pépins pour atteindre une dose toxique chez l'adulte. Avaler quelques pépins entiers par accident ne présente aucun danger.</li>
+      <li><b>Digestifs :</b> la pomme est riche en fructose et en sorbitol (un FODMAP), ce qui peut provoquer ballonnements ou inconfort digestif chez les personnes sensibles, notamment en cas de syndrome de l'intestin irritable.</li>
+      <li><b>Érosion dentaire :</b> le jus de pomme, du fait de son acidité, peut contribuer à l'érosion de l'émail dentaire en cas de consommation fréquente, surtout comparé à la pomme entière qui stimule davantage la salivation.</li>
+      <li><b>Résidus de pesticides :</b> la pomme figure régulièrement parmi les fruits les plus traités selon les programmes de surveillance ; laver ou éplucher le fruit permet de réduire l'exposition, au prix d'une partie de la fibre et des polyphénols concentrés dans la peau.</li>
+      <li><b>Allergies :</b> le syndrome d'allergie orale (réaction croisée avec le pollen de bouleau) peut provoquer des démangeaisons buccales chez les personnes allergiques au pollen ; la cuisson du fruit réduit généralement ce risque.</li>
+    </ul>
+    <div class="sources">
+      <div class="sources-label">Sources</div>
+      <a href="https://www.poison.org/articles/an-apple-a-day-keeps-the-doctor-away-but-what-about-the-seeds" target="_blank">Poison Control — pépins de pomme et cyanure ↗</a>
+      <a href="https://www.sciencedirect.com/science/article/abs/pii/S0308814614013077" target="_blank">Étude — dosage de l'amygdaline dans les pépins et jus de pomme (ScienceDirect) ↗</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Ce qu'il faut retenir</h2>
+    <table class="recap">
+      <tr><th>Effet</th><th>Grade</th><th>Fiabilité</th></tr>
+      <tr><td>Santé cardiovasculaire</td><td><span class="grade-chip b">B</span></td><td>Cohérent sur CRP, HDL et mortalité CV</td></tr>
+      <tr><td>Diabète de type 2</td><td><span class="grade-chip b">B</span></td><td>Modeste mais reproduit sur 5 cohortes</td></tr>
+      <tr><td>Cholestérol / lipides</td><td><span class="grade-chip c">C</span></td><td>Un essai positif, méta-analyse plus mitigée</td></tr>
+      <tr><td>Cancer</td><td><span class="grade-chip c">C</span></td><td>Observationnel uniquement</td></tr>
+      <tr><td>Mortalité toutes causes</td><td><span class="grade-chip c">C</span></td><td>Cohorte unique, cohérente avec d'autres données</td></tr>
+      <tr><td>Poids / satiété</td><td><span class="grade-chip c">C</span></td><td>Effet sur l'IMC, pas sur le poids global</td></tr>
+      <tr><td>Fonction pulmonaire / asthme</td><td><span class="grade-chip d">D</span></td><td>Études anciennes, non confirmées récemment</td></tr>
+      <tr><td>Microbiote intestinal</td><td>—</td><td>Prometteur mais préliminaire</td></tr>
+    </table>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Conclusion et recommandations</h2>
+    <div class="conclusion-box">
+      <h3>Le dicton résiste plutôt bien à l'examen scientifique</h3>
+      <p>La pomme fait partie des rares aliments dont les effets bénéfiques sur la santé cardiovasculaire et le risque de diabète de type 2 sont soutenus par des méta-analyses convergentes, qu'elles portent sur des essais cliniques ou sur de grandes cohortes. L'ampleur de ces effets reste modeste, mais elle est cohérente d'une étude à l'autre, ce qui constitue justement la marque d'un effet réel plutôt que d'un artefact statistique.</p>
+      <p>En revanche, pour d'autres bénéfices souvent cités — protection contre le cancer, perte de poids, amélioration de la fonction pulmonaire — les preuves sont soit purement observationnelles, soit anciennes et non répliquées récemment. Elles restent plausibles sans être démontrées avec certitude.</p>
+    </div>
+    <div class="verdict-box">
+      <h3 class="sub-title" style="margin-top:0;">Notre verdict</h3>
+      <div class="verdict-stars">⭐⭐⭐⭐☆</div>
+      <div class="verdict-score">VERDICT GLOBAL : 4/5</div>
+      <p>La pomme mérite sa réputation, sans être un aliment magique. Les preuves les plus solides concernent la santé cardiovasculaire (baisse de la CRP, hausse du HDL, réduction de la mortalité cardiovasculaire dans les grandes cohortes) et, dans une moindre mesure, la prévention du diabète de type 2. Ces effets sont modestes mais reproduits d'une étude à l'autre, ce qui leur donne davantage de crédibilité que des résultats spectaculaires mais isolés.</p>
+      <p>Les bénéfices sur le cancer, le poids et la fonction respiratoire, souvent mis en avant, reposent sur des preuves plus fragiles : essentiellement observationnelles, parfois anciennes, et pas toujours confirmées par les analyses les plus récentes.</p>
+      <p style="margin-bottom:0;"><b>Notre recommandation :</b> intégrer une à deux pommes par jour dans une alimentation variée est une habitude simple et bien étayée sur le plan cardiométabolique. Il n'existe en revanche aucune preuve qu'un jus, une compote ou un extrait concentré offre les mêmes bénéfices que le fruit entier avec sa peau.</p>
+    </div>
+    <p class="disclaimer">Cet article a un but informatif et ne remplace pas un avis médical individualisé.</p>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Comment la consommer ?</h2>
+    <p>La plupart des effets étudiés concernent la pomme entière, avec sa peau, et non le jus ou les compléments à base d'extrait de pomme. La peau concentre à elle seule une grande partie des polyphénols et de la fibre insoluble du fruit.</p>
+    <ul class="howto-list">
+      <li><b>Manger la pomme avec la peau</b>La peau contient une part importante des polyphénols et de la fibre associés aux effets observés dans les études ; bien laver le fruit permet de limiter les résidus de surface.</li>
+      <li><b>Préférer le fruit entier au jus</b>Le jus de pomme perd la quasi-totalité de la fibre du fruit et concentre le fructose, ce qui modifie sa réponse glycémique et sa capacité à procurer une satiété durable.</li>
+      <li><b>Une à deux pommes par jour</b>C'est la fourchette généralement utilisée dans les essais cliniques positifs sur le cholestérol et les marqueurs cardiovasculaires (deux pommes par jour dans l'essai de référence sur le profil lipidique).</li>
+      <li><b>Varier les variétés</b>La teneur en polyphénols varie fortement selon la variété (les pommes plus acidulées et à peau colorée en sont souvent plus riches) ; alterner les variétés diversifie les apports.</li>
+      <li><b>Retirer les pépins avant de mixer</b>Lors de la préparation de smoothies ou de compotes maison, retirer les pépins évite de les broyer en grande quantité, seule situation où leur teneur en amygdaline devient pertinente.</li>
+    </ul>
+    <h3 class="sub-title">Qui doit être prudent ?</h3>
+    <p>Une consommation plus modérée ou un avis médical sont recommandés en cas :</p>
+    <ul class="criteria-list">
+      <li>de syndrome de l'intestin irritable ou de sensibilité connue aux FODMAP (fructose, sorbitol) ;</li>
+      <li>d'allergie au pollen de bouleau, en cas de réactions buccales à la pomme crue ;</li>
+      <li>de diabète mal équilibré nécessitant un contrôle strict des apports en glucides, en particulier pour le jus de pomme, à index glycémique plus élevé que le fruit entier.</li>
+    </ul>
+    <p>La pomme consommée entière, en quantité raisonnable, reste un aliment sûr pour la grande majorité de la population.</p>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Références scientifiques</h2>
+    <div class="ref-group">
+      <div class="ref-group-title">Santé cardiovasculaire</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/34565081/" target="_blank">Méta-analyse — pomme, polyphénols et risque cardiovasculaire (PubMed) ↗</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6813372/" target="_blank">Méta-analyse — pommes, poires et risque cardiométabolique (PMC) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Diabète de type 2</div>
+      <a href="https://pubs.rsc.org/en/content/articlepdf/2017/fo/c6fo01378c" target="_blank">Méta-analyse — pomme, poire et diabète de type 2 (Food & Function) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Cholestérol</div>
+      <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6997084/" target="_blank">Essai randomisé — deux pommes par jour (AJCN, PMC) ↗</a>
+      <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9016272/" target="_blank">Méta-analyse — pomme et marqueurs métaboliques (PMC) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Cancer</div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/27000627/" target="_blank">Méta-analyse — pomme et risque de cancer (PubMed) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Mortalité</div>
+      <a href="https://www.cambridge.org/core/journals/british-journal-of-nutrition/article/apple-intake-is-inversely-associated-with-allcause-and-diseasespecific-mortality-in-elderly-women/EC7A2E4916E6A660649736CE42189685" target="_blank">Cohorte — pomme et mortalité chez la femme âgée (BJN) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Poids et satiété</div>
+      <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6813372/" target="_blank">Méta-analyse — pomme, poire et IMC (PMC) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Fonction pulmonaire</div>
+      <a href="https://publications.ersnet.org/content/erj/26/3/449" target="_blank">Flavonoïdes alimentaires et asthme (ERJ) ↗</a>
+      <a href="https://publications.ersnet.org/content/erj/50/6/1602286" target="_blank">Antioxydants alimentaires et fonction pulmonaire (ERJ) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Microbiote</div>
+      <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8065949/" target="_blank">Essai randomisé — pomme, microbiote et immunité (PMC) ↗</a>
+      <a href="https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2026.1797920/full" target="_blank">Essai — pomme et profils de microbiote (Frontiers in Nutrition) ↗</a>
+    </div>
+    <div class="ref-group">
+      <div class="ref-group-title">Sécurité</div>
+      <a href="https://www.poison.org/articles/an-apple-a-day-keeps-the-doctor-away-but-what-about-the-seeds" target="_blank">Poison Control — pépins de pomme et cyanure ↗</a>
+      <a href="https://www.sciencedirect.com/science/article/abs/pii/S0308814614013077" target="_blank">Dosage de l'amygdaline dans les pépins et jus de pomme (ScienceDirect) ↗</a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-footer">Article rédigé à partir de méta-analyses et revues systématiques (PubMed, Cochrane, PMC, Frontiers).</footer>
+
+</body>
+</html>
